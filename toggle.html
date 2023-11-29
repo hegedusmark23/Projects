@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    if($("p").hasClass("main"))
+    {
+      $("p").toggleClass("main1");
+    }
+    else
+    {
+      $("p").toggleClass("main");
+    }
+  });
+});
+</script>
+<style>
+.main {
+  font-size: 120%;
+  color: red;
+}
+.main1 {
+  font-size: 120%;
+  color: green;
+}
+</style>
+</head>
+<body>
+
+<button>Toggle class "main" for p elements</button>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<p><b>Note:</b> Click the button more than once to see the toggle effect.</p>
+
+</body>
+</html>
