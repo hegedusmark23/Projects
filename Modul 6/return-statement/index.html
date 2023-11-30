@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+   </style>
+
+   <script>
+    function calc(){
+        let number = +document.getElementById('input').value;
+        let resultText = `The result of ${number} is ${powerOf2(number)}`;
+
+        alert(resultText);
+    }
+
+    function powerOf2(x){
+        return x*x;
+    }
+
+    function combine(fistName,LastName){
+        return `${fistName} ${LastName}`;
+    }
+
+   </script>
+
+</head>
+
+<body>
+
+    <input id="input" type="text"><button onclick="calc()">Calc</button>
+    
+</body>
+</html>

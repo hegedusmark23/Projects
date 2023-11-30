@@ -1,0 +1,296 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.aot {
+    background-image: url(./img/header.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+}
+
+header img {
+    width: 100px;
+}
+
+.navlink {
+    color: white;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: x-large;
+    margin-left: 16px;
+}
+
+.navlink:hover {
+    color: #B48a4e;
+}
+
+.navimg {
+    width: auto;
+    height: 25px;
+    object-fit: scale-down;
+    margin-left: 16px;
+
+}
+
+.navimg:hover {
+    filter: drop-shadow(0px 0px 4px #FFFFFF);
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: xx-large;
+    padding-top: 150px;
+
+}
+
+h1 {
+    color: white;
+    font-size: 120px;
+    font-weight: 100;
+    font-family: 'Viga', sans-serif;
+    margin: 0px;
+    text-align: center;
+
+}
+
+h2 {
+    color: #B48a4e;
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #B48a4e;
+    font-size: 50px;
+}
+
+
+.upcoming-btn {
+    color: white;
+    text-decoration: none;
+    background-color: #B48a4e;
+    padding: 15px;
+    font-size: larger;
+}
+
+.upcoming-btn:hover {
+    background-color: white;
+    color: #B48a4e;
+}
+
+.upcoming-btn2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.quicklink{
+    width: 30%;
+}
+
+.quicklinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: #0f0e0e;
+    padding: 100px 50px;
+
+}
+
+.quicklinks-img{ 
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.upcoming-show {
+    background-color: #3e3e3e;
+    display: flex;
+    align-items: center;
+}
+
+.buy-ticket-img {
+    height: 300px;
+}
+
+.upcoming-show a {
+    color: white;
+    text-decoration: none;
+    background-color: #B48a4e;
+    padding: 16px;
+}
+
+.upcoming-show a:hover {
+    color: #B48a4e;
+    background-color: white;
+}
+
+.festival-info {
+    padding: 40px;
+    flex: 1;
+    height: 220px;
+}
+
+.seperator {
+    background-color: white;
+    width: 1px;
+    height: 250px;
+
+}
+
+.buy-ticket-button {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+.follow-and-listen {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.video-section {
+    background-image: url(./img/bottom.png);
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    background-color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 80px 80px;
+    font-size: 40px;
+}
+
+.footer-link {
+    height: 50px;
+}
+
+.input {
+    width: 300px;
+    height: 44px;
+    text-align: center;
+    font-size: large;
+    border-width: 0px;
+    flex-grow: 1;
+
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+    background-color: #B48a4e;
+    padding: 15px;
+    width: 200px;
+}
+
+.half-width {
+    width: 50%;
+    justify-content: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 16px;
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width:700px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    .quicklinks{
+        flex-direction: column;
+    }
+    .quicklink{
+        width: 100%;
+    }
+
+    h4{
+        font-size: 25px;
+    }
+
+    .buy-ticket-img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .full-width-mobile{
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .footer-text{
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width:1000px){
+    .upcoming-show{
+        flex-direction: column;
+    }
+    .seperator{
+        height: 1px;
+        width: 500px;
+    }
+    .buy-ticket-button{
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+}

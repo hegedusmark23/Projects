@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Ramen</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin-left: 0px;
+        }
+
+        h2 {
+            font-size: 80px;
+            color: #9F0908;
+            font-family: 'Raleway', sans-serif;
+        }
+
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h3 {
+            font-family: 'Economica', sans-serif;
+            font-size: 56px;
+            margin: 5px;
+        }
+
+        .table {
+            border-collapse: separate;
+            border-spacing: 5em;
+        }
+
+        .main-container {
+            position: absolute;
+            top: -150px;
+            right: 0px;
+            left: 0px;
+            height: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            padding-bottom: 100px;
+        }
+
+        .atf-image {
+            object-fit: fill;
+            width: 1903px;
+            height: 1000px;
+            margin-top: -10px;
+        }
+
+
+
+        .headline {
+            color: white;
+            font-size: 96px;
+
+        }
+
+        .co-headline {
+            font-family: 'Raleway', sans-serif;
+            font-size: 24px;
+            top: -50px;
+            position: relative;
+        }
+
+        .headline-links {
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            font-size: 24px;
+            top: 20px;
+            right: 125px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 1700px;
+            height: 112px;
+
+        }
+
+        .headline-logo {
+            width: 64px;
+            height: 64px;
+            left: 0px;
+        }
+
+        .headline-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: lighter;
+        }
+
+        .tel-link {
+            background-color: #9F0908;
+            width: 190px;
+            height: 24px;
+            display: inline-flex;
+            border-color: white;
+            padding: 10px;
+            border-width: 2px;
+            border-color: white;
+            border-style: solid;
+            border-radius: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tel-link-logo {
+            width: 25px;
+            height: 25px;
+            top: 5px;
+        }
+
+        .howto-section {
+            width: 1903px;
+            height: 600px;
+            background-color: white;
+            padding-bottom: 120px;
+        }
+
+        .howto-headline {
+            padding-top: 120px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .howto-img {
+            width: 128px;
+            height: 128px;
+        }
+
+        .howto-imgs {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .howto-text {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 140px;
+            font-size: 56px;
+        }
+
+        .menu-background {
+            object-fit: cover;
+            width: 1903px;
+            height: 1710px;
+        }
+
+        .menu-section {
+            width: 1903px;
+            height: 1560px;
+            top: 1789px;
+            position: absolute;
+        }
+
+        .menu-headline {
+            position: relative;
+            justify-content: center;
+            display: flex;
+            width: 1903px;
+            padding-top: 120px;
+            padding-bottom: 64px;
+        }
+
+        .foodimg {
+            width: 352px;
+            height: 352px;
+        }
+
+        .tonkotsu {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            padding-bottom: 56px;
+            margin-left: 390px;
+        }
+
+        .spicy-miso {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: row-reverse;
+            padding-bottom: 56px;
+            margin-right: 390px;
+        }
+
+        .shio {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            padding-bottom: 120px;
+            margin-left: 390px;
+        }
+
+        .table-text {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            color: #675E54;
+        }
+
+        .emptyrow {
+            padding-right: 180px;
+        }
+
+        .table1 {
+            padding-left: 80px;
+        }
+
+        .table2 {
+            padding-right: 80px;
+        }
+
+        .table3 {
+            padding-left: 80px;
+        }
+
+        .findus-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 120px;
+        }
+
+        .map-marker {
+            width: 24px;
+            height: 24px;
+        }
+
+        .findus-text {
+            font-family: 'Raleway', sans-serif;
+            font-size: 26px;
+            padding-top: 8px;
+            padding-bottom: 64px
+        }
+
+        .find-us-at {
+            height: 160px;
+        }
+
+        .map {
+            padding-bottom: 10px;
+        }
+        
+        .footer{
+            height: 144px;
+            width:1903px;
+            background-color: #0A141E;
+            display: flex;
+        }
+
+        .sakura-logo-text{
+            height: 44px;
+        }
+    </style>
+
+    <link rel="icon" href="img/1_hero/PNG/sakura_logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <img class="atf-image" src="./img/1_hero/JPG/hero_bg.jpg">
+
+    <div class="main-container">
+        <h1 class="headline">SAKURA RAMEN</h1>
+        <div class="co-headline">THE BEST RAMEN IN TOWN</div>
+    </div>
+
+    <div class="headline-links">
+        <div>
+            <img class="headline-logo" src="./img/1_hero/PNG/sakura_logo.png">
+        </div>
+        <div>
+            <a class="headline-link" href="#howto">MENU</a>
+            <a class="headline-link" href="#">LOCATIONS</a>
+            <a class="headline-link" href="#">ABOUT</a>
+            <a class="headline-link tel-link" href="tel:017654564534"><img class="tel-link-logo"
+                    src="./img/1_hero/PNG/phone.png">0176 54564534</a>
+
+        </div>
+    </div>
+
+    <div id="howto" class="howto-section">
+        <div>
+            <h2 class="howto-headline">HOW TO ORDER</h2>
+        </div>
+        <div class="howto-imgs">
+            <img class="howto-img" src="./img/2_section_how_to_order/PNG/noodle.png">
+
+            <img class="howto-img" src="./img/2_section_how_to_order/PNG/broth.png">
+
+            <img class="howto-img" src="./img/2_section_how_to_order/PNG/egg.png">
+        </div>
+        <div class="howto-text">
+            <h3>Pick your<br> noodle</h3>
+            <h3>Pick your<br> broth</h3>
+            <h3>Add your<br> toppings</h3>
+        </div>
+    </div>
+
+    <img class="menu-background" src="img/3_section_our_menu/JPG/section_our_menu_bg.jpg">
+
+    <div class="menu-section">
+        <div class="menu-headline">
+            <h2>OUR MENU</h2>
+        </div>
+        <div class="tonkotsu">
+            <div>
+                <img class="foodimg" src="./img/3_section_our_menu/Png/R1.png">
+            </div>
+            <div class="table1">
+                <h3>Tonkotsu Ramen</h3>
+                <table class="table-text">
+                    <tr>
+                        <td class="emptyrow">CHICKEN</td>
+                        <td></td>
+                        <td>11.95€</td>
+                    </tr>
+                    <tr>
+                        <td>BEEF</td>
+                        <td></td>
+                        <td>12.95€</td>
+                    </tr>
+                    <tr>
+                        <td>SHRIMP</td>
+                        <td></td>
+                        <td>13.95€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="spicy-miso">
+            <div>
+                <img class="foodimg" src="./img/3_section_our_menu/Png/R2.png">
+            </div>
+            <div class="table2">
+                <h3>Spicy Miso Ramen</h3>
+                <table class="table-text">
+                    <tr>
+                        <td class="emptyrow">CHICKEN</td>
+                        <td></td>
+                        <td>11.95€</td>
+                    </tr>
+                    <tr>
+                        <td>BEEF</td>
+                        <td></td>
+                        <td>12.95€</td>
+                    </tr>
+                    <tr>
+                        <td>SHRIMP</td>
+                        <td></td>
+                        <td>13.95€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="shio">
+            <div>
+                <img class="foodimg" src="./img/3_section_our_menu/Png/R3.png">
+            </div>
+            <div class="table3">
+                <h3>Shio Ramen</h3>
+                <table class="table-text">
+                    <tr>
+                        <td class="emptyrow">CHICKEN</td>
+                        <td></td>
+                        <td>11.95€</td>
+                    </tr>
+                    <tr>
+                        <td>BEEF</td>
+                        <td></td>
+                        <td>12.95€</td>
+                    </tr>
+                    <tr>
+                        <td>SHRIMP</td>
+                        <td></td>
+                        <td>13.95€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="findus-section">
+        <div class="find-us-at">
+            <h2>FIND US AT</h2>
+        </div>
+        <div class="findus-text">
+            <img class="map-marker" src="./img/4_section_find_us_at/PNG/map_marker.png">Kapuzinersraße 31, München,
+            80337
+        </div>
+    </div>
+
+    <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.2081517665038!2d11.561203299999999!3d48.125509099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf44d01affc5%3A0xe7a07e0710be63e8!2zS2FwdXppbmVyc3RyYcOfZSAzMSwgODAzMzcgTcO8bmNoZW4sIE7DqW1ldG9yc3rDoWc!5e0!3m2!1shu!2sch!4v1698080479736!5m2!1shu!2sch"
+        width="1903" height="800" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div class="footer">
+        <div>
+            <img class="sakura-logo-text" src="./img/5_section_footer/PNG/sakura_ramen_logo_and_text.png">
+        </div>
+        <div></div>
+    </div>
+
+
+</body>
+
+</html>

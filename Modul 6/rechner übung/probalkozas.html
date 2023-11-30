@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        function add(){
+            let firstnumber = +document.getElementById('firstnumber').value;
+            let secondnumber = +document.getElementById('secondnumber').value;
+            let result = firstnumber + secondnumber;
+
+            document.getElementById('result').innerHTML = `Das Ergebnis ist ${result}`;
+        }
+
+        function minus(){
+            let firstnumber = +document.getElementById('firstnumber').value;
+            let secondnumber = +document.getElementById('secondnumber').value;
+            let result = firstnumber - secondnumber;
+
+            document.getElementById('result').innerHTML = `Das Ergebnis ist ${result}`;
+
+            
+        }
+
+        function multiply(){
+            let firstnumber = +document.getElementById('firstnumber').value;
+            let secondnumber = +document.getElementById('secondnumber').value;
+            let result = firstnumber * secondnumber;
+            
+            document.getElementById('result').innerHTML = `Das Ergebnis ist ${result}`;
+        }
+
+        function divide(){
+            let firstnumber = +document.getElementById('firstnumber').value;
+            let secondnumber = +document.getElementById('secondnumber').value;
+            let result = firstnumber / secondnumber;
+            
+            document.getElementById('result').innerHTML = `Das Ergebnis ist ${result}`;
+        }
+    </script>
+
+</head>
+
+<body>
+    <input id="firstnumber" type="number" placeholder="Add Number"><input id="secondnumber" type="number" placeholder="Add Number">
+    
+    <button onclick="add()">Add</button>
+    <button onclick="minus()">Minus</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <div id="result">
+
+    </div>
+</body>
+</html>

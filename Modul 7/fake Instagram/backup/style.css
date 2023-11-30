@@ -1,0 +1,283 @@
+body {
+    margin: 0px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 5px 1px #000000;
+    width: 100%;
+    top: 0px;
+}
+
+input{
+    border-radius: 18px 0 0 18px;
+    border-right: 0px;
+    width: 300px;
+    border-color: grey;
+    border-style: solid;
+    
+}
+
+.send-button{
+    border-radius: 0 18px 18px 0;
+    border-left: 0px;
+    background-color: white;
+    border-color: gray;
+    border-style: solid;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+}
+
+.send-button:hover{
+    color: black;
+}
+
+.d-none{
+    display: none;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.header-input{
+    text-align: center;
+    height: 23px;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    background-image: url(./img/search.png);
+    background-repeat: no-repeat;
+    background-position: 63px 4px;
+}
+.header-nav{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headline-logo{
+    height: 80px;
+}
+
+h3{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a{
+    cursor: pointer;
+}
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.post-div{
+    background-color: white;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    width: 500px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.post-image{
+    width: 100%;
+}
+
+.postcontainer{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-headline{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+.profil-img{
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #D300C5;
+}
+
+.profil-img-big{
+    height: 150px;
+    border-radius: 50%;
+}
+
+.header-profile-image{
+    height: 30px;
+    border-radius: 50%;
+
+}
+
+.header-icons{
+    height: 25px;
+
+}
+
+.post-icon{
+    height: 24px;
+    object-fit: cover;
+}
+
+.post-nav{
+    display: flex;
+    gap: 12px;
+    padding: 5px 5px;
+}
+
+.close-button {
+    color: black;
+    text-decoration: none;
+    padding-left: 80px;
+    border: white;
+    background-color: white;
+}
+
+.close-button:hover{
+    font-weight: bold;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.description-div{
+    padding: 10px;
+}
+
+.comment-div{
+    padding: 10px;
+}
+
+.recommendedcontainer{
+    padding-top: 50px;
+    padding-right: 100px;
+    position: absolute;
+    right: 0px;
+}
+
+.recommended-profiles{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.followers-text{
+    font-size: 12px;
+}
+
+.recommended-user{
+    padding-left: 5px;
+}
+
+.follow-link{
+    padding-left: 40px;
+    font-size: 14px;
+    text-decoration: none;
+    color: blue;
+}
+
+.follow-link:hover{
+    color: black;
+}
+
+.profile-site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profiledescription{
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.user-data{
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.line{
+    background-color: black;
+    height: 1px;
+    width: 927px;
+    margin: 50px 0;
+}
+
+.posted-images{
+    height: 309px;
+    width: 309px;
+    object-fit: cover;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    width: 945px;
+}
+
+.opened-photo{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.opened-image{
+    height: 800px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.opened-image-closer{
+    height: 30px;
+}
+
+.closer-div{
+    position: absolute;
+    top: 40px;
+    right: 60px;
+}
+
+.profile-link{
+    color: black;
+    text-decoration: none;
+}
+
+.profile-link:hover{
+    color: rgb(31, 31, 31);
+}

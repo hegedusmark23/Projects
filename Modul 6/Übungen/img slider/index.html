@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div id="sliderContainer" class="slider-container">
+        <img id="img1" style="transform: translateX(0)" class="slider-image" src="./img.jpg" alt="Image">
+        <img id="img2" style="transform: translateX(100%)" class="slider-image" src="./img2.jpg" alt="Image">
+        <img id="img3" style="transform: translateX(200%)" class="slider-image" src="./img3.jpg" alt="Image">
+    </div>
+    <div>
+        <button onclick="showImage1()">1</button>
+        <button onclick="showImage2()">2</button>
+        <button onclick="showImage3()">3</button>
+    </div>
+    <button onclick="startSlider()">Start Slider</button>
+    
+</body>
+</html>

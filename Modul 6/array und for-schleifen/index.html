@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    
+    <script>
+        let todos = ['Einkaufen','Putzen','Kochen','Baszni'];
+
+        function addInputTodos() {
+            let todo = document.getElementById('input').value;
+            todos.push(todo);
+            addTodos();
+            document.getElementById('input').value = '';
+        }
+
+        function addTodos(){
+            document.getElementById('mylist').innerHTML='';
+
+            for (let i = 0; i < todos.length; i++) {
+                document.getElementById('mylist').innerHTML += `<li>${todos[i]}<a href="#" onclick="deleteTodo(${i})">x</a></li>`;
+                
+            }
+        }
+
+        function deleteTodo(position){
+            todos.splice(position,1);
+            addTodos();
+        }
+
+    </script>
+</head>
+<body  onload="addTodos()">
+
+    <input id="input" type="text" placeholder="type todos"><button onclick="addInputTodos()">Add</button>
+    <ul id="mylist">
+    </ul>
+    
+    
+</body>
+</html>

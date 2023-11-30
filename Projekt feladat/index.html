@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <title>MedicalXYZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin: 0px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        p{
+            margin-block-start: 1em;
+        margin-block-end: 5px;
+        }
+
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            justify-content: center;
+            height: 80px;
+        }
+
+        .header-logo{
+            height: 100px;
+        }
+        
+        .header-link-black{
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+        }
+
+        .header-link-black:hover{
+            text-shadow: 3px 4px 12px rgba(0,0,0,0.63);
+        }
+
+        .header-link-green{
+            color: #248073;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .header-link-green:hover{
+            text-shadow: 3px 4px 12px rgb(36,128,115);
+        }
+
+        .button-design{
+            border: 2px solid #248073;
+            padding: 10px;
+            border-radius: 25px 25px 25px 25px;
+            color: #248073;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .button-design:hover{
+            color: white;
+            background-color: #248073;
+        }
+
+        main{
+            background: url(./img/main-background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0px 4px 15px -3px #000000;
+        }
+        
+        h1{
+            color: white;
+            padding-top: 50px;
+            font-size: 60px;
+            margin-block-start: 0.67em;
+            margin-block-end: 10px;
+            text-shadow: 1px 1px black;
+        }
+        
+        h3{
+            margin-block-start: 0.67em;
+        margin-block-end: 100px;
+        }
+
+        .login-section{
+            padding-bottom: 150px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input{
+            height: 50px;
+            width: 250px;
+            border-radius: 8px;
+            font-size: 20px;
+            border: 1px solid white;
+        }
+
+        footer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 44px;
+        }
+
+        .footer-div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-link{
+            color: black;
+            text-decoration: none;
+        }
+
+        .footer-link:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a class="header-link-black" href="">FŐOLDAL</a>
+        <a class="header-link-black" href="">RÓLUNK</a>
+        <a class="header-link-black" href="">SZOLGÁLTATÁSAINK</a>
+        <img class="header-logo" src="./img/logo.png" alt="">
+        <a class="button-design" href="">REGISZTRÁCIÓ</a>
+    </header>
+
+    <main>
+        <H1>BEJELENTKEZÉS</H1>
+        <H3>AZ ORVOSI FOGYÓESZKÖZÖK RENDELÉSI RENDSZERE</H3>
+        <div class="login-section">
+            <input type="text" placeholder="NÉV">
+            <input type="text" placeholder="JELSZÓ">
+            <a class="button-design" href="">BEJELENTKEZÉS</a>
+            <a class="button-design" href="">ELFELEJTETT JELSZÓ</a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="./img/logo.png" alt="">
+
+        <div class="footer-div">
+            <p><b>FÓRUM</b></p>
+            <a class="footer-link" href="">Fejlesztési napló</a>
+            <a class="footer-link" href="">Javaslatok</a>
+        </div>
+
+        <div class="footer-div">
+            <p><b>SÚGÓ</b></p>
+            <a class="footer-link" href="">GY.I.K</a>
+        </div>
+        <div class="footer-div">
+            <p><b>ÜGYFÉLSZOLGÁLAT</b></p>
+            <a class="footer-link"  href="tel:061111111">06-1-111-111</a>
+            <a class="footer-link" href="mailto:info@randomdomain.com">info@randomdomain.com</a>
+        </div>
+    </footer>
+    
+</body>
+</html>

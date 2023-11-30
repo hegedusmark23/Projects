@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kochwelt - Rezept des Tages</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+        <link rel="shortcut icon" href="./assets/img/logo_small.png" type="image/x-icon">
+    </head>
+<body onload="includeHTML()">
+    <div w3-include-html="./templates/header.html"></div>
+    
+    <main>
+
+        <div class="recipe-head">
+            <h1 class="recipe-headline">Tiramisu</h1>
+            <img class="recipe-image" src="./assets/img/tiramisu.webp" alt="rezept image tiramisu" class="recipe-image">
+            <div class="recipe-properties">
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/clock-regular.svg" alt="small icon">
+                    <p class="info-text">30 Min.</p>
+                </div>
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/brain-solid.svg" alt="small icon">
+                    <p class="info-text">Normal</p>
+                </div>
+                <div class="info-container">                    
+                    <img class="small-icon" src="./assets/img/icons/calendar-alt-regular.svg" alt="small icon">
+                    <p class="info-text">14.11.2023</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="input-field-container">
+            <label for="inputField">Zutaten für</label>
+            <input class="inputField" id="inputField" type="number" value="4" min="1" max="6"><button class="input-button" onclick="calculate(1)">Portion(en)</button>
+        </div>
+
+        <ul class="list" id="list">
+            <li>500 gr Mascarpone</li>
+            <li>100 gr Puderzucker</li>
+            <li>200 gr Löffelbiskuits</li>
+            <li>4 Eigelb</li>
+            <li>2 Eiweiß</li>
+            <li>3 Tassen gekochter Kaffee</li>
+            <li>2 EL Amaretto</li>
+        </ul>
+
+        <div class="preperation-container">
+            <div class="prep-head">
+                <h2 class="prep-headline">Zubereitung</h2>
+                <div class="prep-time">
+                    <div class="info-container">                        
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">30 Minuten</p>
+                    </div>
+                    <div class="info-container">                        
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">30 Minuten</p>
+                    </div>
+                </div>
+                <p class="prep-text">
+                    Eigelb, und Puderzucker weiß-schaumig schlagen. Amaretto unterrühren. Mascarpone vorsichtig unterrühren. Nicht mit dem Mixer, sonst wird die Masse flüssig. Lieber einen großen Schneebesen oder Kochlöffel benutzen. Das Eiweiß zu steifem Schnee schlagen und unterheben.
+                    <br>
+                    <br>
+                    Löffelbiskuits kurz in kalten Kaffee tunken und auf Küchenpapier etwas abtropfen lassen.
+                    Eine Lage Creme in eine Form geben, darauf eine Lage Biskuits usw.
+                    <br>
+                    <br>
+                    2–4 Stunden (am besten sogar über Nacht) kalt stellen, kurz vor dem Servieren mit Kakaopulver bestreuen.
+                    <br>
+                    <br>
+                    Ist wirklich so gut wie beim Italiener!</p>
+            </div>
+
+            <div class="recipe-from-container">
+                <h3 class="from-headline">Rezept erstellt von</h3>
+                <div class="recipe-from">
+                    <img src="./assets/img/profile.png" alt="profile image" class="profile-img">
+                    <h2 class="author">Daniel</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div w3-include-html="./templates/footer.html"></div>
+</body>
+</html>
+

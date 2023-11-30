@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function add(){
+            let myfirstnumber = +document.getElementById('number1').value;
+            let mysecondnumber = +document.getElementById('number2').value;
+            let result = myfirstnumber + mysecondnumber
+
+            document.getElementById('headline').innerHTML=`Das Ergebnis ist ${result}`;
+        }
+
+        function minus(){
+            let myfirstnumber = +document.getElementById('number1').value;
+            let mysecondnumber = +document.getElementById('number2').value;
+            let result = myfirstnumber - mysecondnumber
+
+            document.getElementById('headline').innerHTML=`Das Ergebnis ist ${result}`;
+        }
+
+        function multiplicate(){
+            let myfirstnumber = +document.getElementById('number1').value;
+            let mysecondnumber = +document.getElementById('number2').value;
+            let result = myfirstnumber * mysecondnumber
+
+            document.getElementById('headline').innerHTML=`Das Ergebnis ist ${result}`;
+        }
+
+        function divide(){
+            let myfirstnumber = +document.getElementById('number1').value;
+            let mysecondnumber = +document.getElementById('number2').value;
+            let result = myfirstnumber / mysecondnumber
+
+            document.getElementById('headline').innerHTML=`Das Ergebnis ist ${result}`;
+        }
+
+        
+
+       
+
+    </script>
+</head>
+<body>
+    <input id="number1" type="number" min="0">
+    <input id="number2" type="number">
+    <button onclick="add()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="multiplicate()">*</button>
+    <button onclick="divide()">:</button>
+    <h1 id="headline"></h1>
+
+   
+    
+</body>
+</html>

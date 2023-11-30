@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/lieferando-icon.png" type="image/x-icon">
+</head>
+
+<body onload="renderMenu(),generateMobileBasket()">
+    <header>
+        <a href="index.html"><img class="logo-headline" src="./img/headline.png" alt=""></a>
+        <h4>Speisekarte</h4>
+        <div class="header-nav-div">
+            <a href=""><img class="menu-icon" src="./img/germany.png" alt=""></a>
+            <a href=""><img class="menu-icon" src="./img/menu.png" alt=""></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="box-shadow">
+            <img class="restaurant-header-image" src="./img/restaurant-header.jpg" alt="">
+            <div class="menu">
+                <div>
+                <span>
+                    <img class="restaurant-logo" src="./img/restaurant-logo.jpg" alt="">
+                    <span class="restaurant-title-section">
+                        <h1>Muster Restaurant</h1>
+                        <div class="headline-icons-div">
+                            <img class="headline-icon" src="./img/info.png" alt="">
+                            <img class="headline-icon" src="./img/heart.png" alt="">
+                        </div>
+                    </span>
+                </span>
+                <span class="rating-details">
+                    <img class="rating-image" src="./img/rating.jpg" alt="">
+                    <a class="rating-text" href="#">4.7k Bewertungen</a>
+                </span>
+                <span class="delivery-details">
+                    <img class="delivery-icon" src="./img/shopping-bag.png" alt="basket">
+                    <p> Min. 20,00€</p>
+                    <img class="delivery-icon" src="./img/bicycle.png" alt="bicycle">
+                    <p class="delivery-text">1,99€</p>
+                </span>
+
+                <h1>Angebote</h1>
+                <span class="categories-nav">
+                    <img class="headline-icon" src="./img/search.png" alt="">
+                    <a class="category-link" href="">Döner</a>
+                    <a class="category-link" href="">Dürüm</a>
+                    <a class="category-link" href="">Pizza</a>
+                    <a class="category-link" href="">Salate</a>
+                    <a class="category-link" href="">Kartoffel</a>
+                    <a class="category-link" href="">Pasta</a>
+                    <a class="category-link" href="">Snacks</a>
+                    <a class="category-link" href="">Desserts</a>
+                    <a class="category-link" href="">Alkoholische Gätrenke</a>
+                    <img class="headline-icon" src="./img/right-arrow.png" alt="">
+                </span>
+                </div>
+            </div>
+
+            <div class="menu-foods" id="menu"></div>
+        </div>
+        
+        <div id="basket" class="basket d-flex"></div>
+
+        <div class="mobile-basket" id="mobile-basket"></div>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

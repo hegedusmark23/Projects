@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        a {
+            text-decoration: none;
+            padding: 20px;
+            background-color: grey;
+            color: white;
+            border-radius: 10px;
+        }
+
+        a:hover{
+            text-decoration: none;
+            padding: 20px;
+            background-color: black;
+            color: yellow;
+            border-radius: 10px;
+        }
+
+        .square{
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            margin-top: 100px;
+        }
+
+        .d-none{
+            display: none;
+        }
+    </style>
+
+    <script>
+        function change(id){
+           let valami =  document.getElementById(id).classList.add('d-none');
+        }
+
+        function changeBack(id){
+            document.getElementById(id).classList.remove('d-none');
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <a onclick="change(1)" id="button" href="#">Ez egy gomb</a>
+    <a onclick="changeBack(1)" id="button" href="#">Ez egy másik gomb</a>
+
+    <div class="square" id="1"></div>
+
+</body>
+
+</html>

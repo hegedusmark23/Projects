@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .asd{
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-color: grey;
+        }
+
+        .d-none{
+            display: none;
+        }
+    </style>
+
+    <script>
+
+        function deleteItem(id){
+            let number = document.getElementById(id).classList.add('d-none');
+        }
+
+        function show(id){
+            document.getElementById(id).classList.remove('d-none');
+        }
+    </script>
+</head>
+<body>
+
+    <button onclick="show(1)">1</button>
+    <button onclick="show(2)">2</button>
+    <button onclick="show(3)">3</button>
+    <button onclick="show(4)">4</button>
+
+    <div id="1" onclick="deleteItem(1)" class="asd"></div>
+    <div id="2" onclick="deleteItem(2)" class="asd"></div>
+    <div id="3" onclick="deleteItem(3)" class="asd"></div>
+    <div id="4" onclick="deleteItem(4)" class="asd"></div>
+    
+</body>
+</html>

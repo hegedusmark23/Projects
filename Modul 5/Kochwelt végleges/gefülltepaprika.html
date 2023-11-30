@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gefüllte Paprika</title>
+    <link rel="icon" href="./assets/img/logo_small.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    </script>
+</head>
+
+<body onload="includeHTML()">
+
+    <div w3-include-html="./templates/header.html"></div>
+    <main>
+        <div class="recipe-head">
+            <h1>Gefüllte Paprika</h1>
+            <img class="recipe-image" src=./assets/img/gefuelltepaprika.jpg>
+
+            <div class="recipe-properties">
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/clock-regular.svg">
+                    <p>15 Min.</p>
+                </div>
+
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/brain-solid.svg">
+                    <p>Simpel</p>
+                </div>
+
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/calendar-alt-regular.svg">
+                    <p>02.11.2023</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-field-container margin-side">
+            <label for="inputField">Zutaten für</label>
+            <input class="inputField" id="inputField" type="number" value="4" min="1" max="6"><button
+                class="input-button" onclick="calculate(3)">Portion(en)</button>
+        </div>
+
+        <ul class="list margin-side" id="list">
+            <li>500 g Spitzpaprika, gelb</li>
+            <li>250 g Mett oder Gehacktes vom Schwein</li>
+            <li>100 g Reis, roh gewogen, vorgaren</li>
+            <li>2 Zwiebel(n), gewürfelt</li>
+            <li>4 Zehe/n Knoblauch, zerdrückt</li>
+            <li>1 Ei(er)</li>
+            <li>1 Scheibe/n Weißbrot oder Brötchen, eingeweicht</li>
+            <li>2 EL, gestr. Paprikapulver, geräuchert</li>
+            <li>2 EL Olivenöl</li>
+            <li>500 ml Brühe, aus Vegeta (oder Gemüsebrühe)</li>
+            <li>½ Tube/n Tomatenmark</li>
+            <li>3 Stiele Petersilie, glatt, gehackt</li>
+        </ul>
+
+        <div class="preperation-container margin">
+            <div class="prep-head">
+                <h2 class="prep-headline">Zubereitung</h2>
+                <div class="prep-time">
+                    <div class="info-container">
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">Arbeitszeit ca. 15 Minuten</p>
+                    </div>
+                    <div class="info-container">
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">Gesamtzeit ca. 15 Minuten</p>
+                    </div>
+                </div>
+                <p class="prep-text">Die Paprikaschoten waschen. Das Kerngehäuse mittels eines scharfen Löffels
+                    herauskratzen. Beiseite stellen.
+
+                    <br>
+                    <br>
+                    Füllung:
+                    Mett mit ausgekühltem Reis, 1 EL Paprikapulver, Ei, ausgedrücktem Weißbrot, 1 gewürfelten Zwiebel,
+                    zwei zerdrückten Knoblauchzehen, 1 EL Petersilie, Pfeffer und Salz würzen und vermengen. In die
+                    Paprikaschoten füllen.
+                    <br>
+                    <br>
+                    Die andere gewürfelte Zwiebel und Knoblauch in Olivenöl glasig dünsten. Mit 1 EL Paprikapulver
+                    verrühren und nur kurz mit anrösten. Die Brühe dazugeben und das Tomatenmark einrühren.
+                    Die Paprikaschoten in die Sauce geben und ca. 20 Minuten mit geschlossenem Deckel köcheln lassen,
+                    dann bleiben die Schoten noch bissfest.
+                    Nach 10 Minuten Kochzeit die Schoten einmal wenden. Nach weitern 10 Minuten die Hitze runterschalten
+                    und die Schoten noch etwa 10 Minuten in der Sauce ziehen lassen. Vor dem Servieren mit Pfeffer,
+                    Salz, etwas Zucker und dem Rest Petersilie abschmecken.
+                    <br>
+                    <br>
+                    Dazu wird traditionell weißes Bauernbrot gegessen.
+                </p>
+            </div>
+
+            <div class="recipe-from-container">
+                <h3 class="from-headline">Rezept erstellt von</h3>
+                <div class="recipe-from">
+                    <img src="./assets/img/profil-mark.jpg" alt="profile image" class="profile-img">
+                    <h2 class="author">Mark</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div w3-include-html="./templates/footer.html"></div>
+
+</body>
+
+</html>

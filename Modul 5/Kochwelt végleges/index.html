@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <link rel="shortcut icon" href="./assets/img/logo_small.png" type="image/x-icon">
+</head>
+
+<body onload="includeHTML()">
+
+    <div w3-include-html="./templates/header.html"></div>
+
+    <div class="recipe-container">
+        <img src="./assets/img/gulasch.jpg" alt="recipe image" class="recipe-img">
+        <div class="description-container">
+            <div class="text-container">
+                <h1 class="recipe-headline">Gulasch</h1>
+                <p class="recipe-subtext">Gulasch ist ein Klassiker, von dem es viele Rezepte gibt. Wir haben uns auf
+                    die Suche nach dem besten Gulasch-Rezept gemacht. Hier ist es!</p>
+            </div>
+            <div class="link-container">
+                <a href="./gulasch.html" class="recipe-link">Rezept öffnen</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommend-container">
+        <h1 class="recommend-headline">Lust auf was neues?</h1>
+        <div class="recommend-links">
+            <a href="./langos.html" class="recommend-link">
+                <img src="./assets/img/langos.jpg" alt="rezept vorschlag" class="recommend-img">
+                <b>Langos</b></a>
+            <a href="./gefülltepaprika.html" class="recommend-link">
+                <img src="./assets/img/gefuelltepaprika.jpg" alt="rezept vorschlag" class="recommend-img">
+                <b>Gefüllte Paprika</b></a>
+            <a href="./spaghetti.html" class="recommend-link">
+                <img src="./assets/img/spaghetti.jpg" alt="rezept vorschlag" class="recommend-img">
+                <b>Spagehtti</b></a>
+        </div>
+    </div>
+
+    <div class="pan-wok-container">
+        <h1 class="pan-wok-headline">Pfanne vs. Wok - Was ist besser?</h1>
+        <div class="pan-wok-description-container">
+            <p class="pan-wok-text">Der Hauptunterschied zwischen ihnen ist die Geometrie. Woks haben steil abfallende
+                Seiten und einen abgerundeten Boden, während Bratpfannen leicht abgewinkelte Seiten und flache Böden
+                haben. Woks ermöglichen es den Speisen, sich in der Mitte zu sammeln, wo die Hitze konzentriert wird,
+                wodurch sie sich perfekt zum Braten unter Rühren eignen.
+                Darüber hinaus erleichtern Ihnen die schrägen Seiten das Werfen.
+                <br>
+                <br>
+                Bratpfannen hingegen ermöglichen eine gleichmäßige Verteilung von Saucen, Ölen und anderen Flüssigkeiten
+                auf dem flachen Boden. Es bietet die richtige Oberfläche zum Anbraten von Fleisch oder zum Garen von
+                Steaks.
+            </p>
+            <img src="./assets/img/wok.jpg" alt="" class="wok-img">
+        </div>
+    </div>
+
+    
+
+    <div w3-include-html="./templates/footer.html"></div>
+
+</body>
+
+</html>

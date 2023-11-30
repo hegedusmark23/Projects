@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function meineFuntion(){
+            let name = document.getElementById('name');
+
+            if (name.value.length == 0) {
+                alert('Fehler!')
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="meineFuntion(); return false;">
+        <input id="name" required minlength="2" type="text" placeholder="Name">
+        <input id="name" required type="email" placeholder="Name">
+        <input id="name" required type="number" min="10" placeholder="Name">
+        <button>Absenden</button>
+    </form> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+    <script>
+
+        function addInputTodos() {
+            let todos = document.getElementById('input').value;
+            addTodos(todos);
+            document.getElementById('input').value = '';
+        }
+
+        function addTodos(todos) {
+            document.getElementById('mylist').innerHTML += `<li>${todos}</li>`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="input" type="text" placeholder="type todos"><button onclick="addInputTodos()">Add</button>
+    <ul id="mylist">
+    </ul>
+
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kochwelt - Spaghetti Rezept</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+        <link rel="shortcut icon" href="./assets/img/logo_small.png" type="image/x-icon">
+    </head>
+<body onload="includeHTML()">
+    <div w3-include-html="./templates/header.html"></div>
+    
+    <main>
+
+        <div class="recipe-head">
+            <h1 class="recipe-headline">Spaghetti</h1>
+            <img class="recipe-image" src="./assets/img/spaghetti.jpg" alt="rezept image spaghetti" class="recipe-image">
+            <div class="recipe-properties">
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/clock-regular.svg" alt="small icon">
+                    <p class="info-text">30 Min.</p>
+                </div>
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/brain-solid.svg" alt="small icon">
+                    <p class="info-text">Normal</p>
+                </div>
+                <div class="info-container">                    
+                    <img class="small-icon" src="./assets/img/icons/calendar-alt-regular.svg" alt="small icon">
+                    <p class="info-text">14.11.2023</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="input-field-container">
+            <label for="inputField">Zutaten für</label>
+            <input class="inputField" id="inputField" type="number" value="4" min="1" max="6"><button class="input-button" onclick="calculate(4)">Portion(en)</button>
+        </div>
+
+        <ul class="list" id="list">
+            <li>125 gr Butter</li>
+            <li>2 große Zwiebeln</li>
+            <li>1 EL Tomatenmark</li>
+            <li>3 Karotten</li>
+            <li>3 Stangen Staudensellerie</li>
+            <li>1 kg Rinderhackfleisch</li>
+            <li>1 Schuss Weißwein</li>
+            <li>1 Dose Tomaten</li>
+            <li>3 Zehen Knoblauch</li>
+            <li>600 gr Spaghetti</li>
+            <li>350 ml Milch</li>
+        </ul>
+
+        <div class="preperation-container">
+            <div class="prep-head">
+                <h2 class="prep-headline">Zubereitung</h2>
+                <div class="prep-time">
+                    <div class="info-container">                        
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">ca. 30 Mins</p>
+                    </div>
+                    <div class="info-container">                        
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">1 Stunde</p>
+                    </div>
+                </div>
+                <p class="prep-text">Das Wichtigste an einer Bolognese ist das sogenannte "Soffritto": Dazu einen ordentlichen Klotz Butter (ca. 125 g) und ein wenig Olivenöl (damit die Butter nicht verbrennt) in eine Pfanne geben. Zwiebeln, Möhren und Staudensellerie putzen bzw. schälen, ganz fein hacken und auf möglichst niedriger Flamme langsam (mind. 30 Minuten) darin garen, bis das Gemüse schön glasig und weich geworden ist. Wichtig ist, dass das Gemüse nicht brät, sondern wirklich nur dünstet - also nicht zu heiß werden lassen!
+                <br>
+                <br>
+                Derweil das Rinderhackfleisch so lange in einer weiteren Pfanne scharf braten, bis es kräftig Farbe annimmt. Anschließend mit einem Schuss Weißwein ablöschen, sodass sich alles Angebackene vom Boden lösen lässt. Wichtig: Jetzt je nach Saucenmenge ca.1/4 bis 1/2 Liter Milch hinzugeben, die sich um das Hackfleisch legt und diesem einen ganz milden Geschmack verleiht.
+                <br>
+                <br>  
+                Sobald das Fleisch mit Weißwein und Milch aufkocht, die Dosentomaten hinzugeben (die erforderlichen frischen Tomaten sind bei uns leider nicht erhältlich). Am besten geeignet sind hierfür die San Marzano Eiertomaten aus der Gegend von Neapel. Diese haben einen ganz eigenen süßlichen Geschmack, der der Sauce Bolognese und auch einer ordentlichen Sauce Napoli sehr zuträglich ist.
+                Sobald dies alles wieder aufgekocht ist, den "Soffritto" hinzugeben. Der in Scheiben geschnittene Knoblauch kann jetzt auch mit hinein. Mit Meersalz und frisch gemahlenem schwarzem Pfeffer abschmecken. Die Bolognese kann dann gar nicht lange genug köcheln. Ideal wären ca. 2 Stunden. Mindestens 30 Minuten sollte sie aber köcheln. Bei Bedarf immer mal etwas Wasser oder leichte Brühe nachgießen, damit nichts anbrennt.
+                <br>
+                <br>
+                Dann ggf. abkühlen lassen und ca. 1 Stunde vor der Mahlzeit langsam aufwärmen (muss aber nicht, man kann sie auch gleich servieren).
+                <br>
+                <br>  
+                Tipp: Man kann auch noch ein wenig frisch gehackte Möhre und Staudensellerie nachschieben, um ein wenig mehr Biss an das Gemüse zu kriegen.
+                <br>
+                <br>   
+                In der Zwischenzeit die Nudeln nach Packungsanweisung bissfest kochen, anschließend abgießen.
+                    
+                Die Spaghetti auf Tellern anrichten und die Bolognese darüber verteilen. Heiß servieren.</p>
+            </div>
+
+            <div class="recipe-from-container">
+                <h3 class="from-headline">Rezept erstellt von</h3>
+                <div class="recipe-from">
+                    <img src="./assets/img/profile.png" alt="profile image" class="profile-img">
+                    <h2 class="author">Daniel</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div w3-include-html="./templates/footer.html"></div>
+</body>
+</html>
+

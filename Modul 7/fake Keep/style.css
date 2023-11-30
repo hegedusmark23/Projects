@@ -1,0 +1,46 @@
+p{
+    margin: 10px;
+}
+
+h1{
+    margin: 10px;
+}
+
+.input-div{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.content-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.input-section{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 20px 0px;
+    padding: 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.20);
+    border-radius: 10px;
+}
+
+.notice-block{
+    box-shadow: 0 3px 5px rgba(0,0,0,.20);
+    min-width: 200px;
+    max-width: 300px;
+    height: 100%;
+    overflow-wrap: anywhere;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #f1f1f1;
+}
+
+.delete-button{
+    margin: 10px;
+}

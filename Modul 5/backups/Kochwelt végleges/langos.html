@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt - Lángos Rezept</title>
+    <link rel="icon" href="./assets/img/logo_small.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    </script>
+</head>
+
+<body onload="includeHTML()">
+
+    <div w3-include-html="./templates/header.html"></div>
+    <main>
+        <div class="recipe-head">
+            <h1>Ungarische Langos mit Knoblauchcreme und Käse</h1>
+            <img class="recipe-image" src=./assets/img/langos.jpg>
+
+            <div class="recipe-properties">
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/clock-regular.svg">
+                    <p>2 Stunden 40 Minuten.</p>
+                </div>
+
+                <div class="info-container">
+                    <img class="small-icon" src="./assets/img/icons/brain-solid.svg">
+                    <p>Simpel</p>
+                </div>
+
+                <div class="info-container">
+                    <img class="small-icon"src="./assets/img/icons/calendar-alt-regular.svg">
+                    <p>02.11.2023</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-field-container margin-side">
+            <label for="inputField">Zutaten für</label>
+            <input class="inputField" id="inputField" type="number" value="4" min="1" max="6"><button
+                class="input-button" onclick="calculate(2)">Portion(en)</button>
+        </div>
+
+        <ul class="list margin-side" id="list">
+            <li>500 g Weizenmehl, bei Bedarf auch mehr</li>
+            <li>1 Würfel Hefe</li>
+            <li>2 TL Salz</li>
+            <li>250 ml Wasser, lauwarmes</li>
+            <li>100 ml Milch, lauwarme</li>
+            <li>2 TL Zucker</li>
+            <li>200 g Käse, geriebener</li>
+            <li>200 g saure Sahne</li>
+            <li>200 g Schmand</li>
+            <li>3 Knoblauchzehe(n)</li>
+        </ul>
+
+        <div class="preperation-container margin">
+            <div class="prep-head">
+                <h2 class="prep-headline">Zubereitung</h2>
+                <div class="prep-time">
+                    <div class="info-container">
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">Arbeitszeit ca. 40 Minuten</p>
+                    </div>
+                    <div class="info-container">
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">Gesamtzeit ca. 2 Stunden 40 Minuten</p>
+                    </div>
+                    <div class="info-container">
+                        <img src="./assets/img/icons/clock-regular.svg" alt="small clock icon" class="small-icon">
+                        <p class="info-text">Ruhezeit ca. 2 Stunden </p>
+                    </div>
+                </div>
+                <p class="prep-text">Für die Creme saure Sahne und Schmand in eine Schüssel geben, den Knoblauch fein
+                    hacken
+                    oder durch eine Presse drücken und dazugeben. Gut verrühren, mit Salz und Pfeffer abschmecken und
+                    mindestens 1 Stunde durchziehen lassen.
+
+                    <br>
+                    <br>
+                    Für die Langos Wasser und Milch leicht erwärmen. In eine kleine Schüssel die Hefe bröckeln, die
+                    lauwarme
+                    Milch und den Zucker dazugeben und die Mischung glatt rühren. In eine Schüssel das Mehl geben, die
+                    Hefemilch und das lauwarme Wasser dazu gießen. Alles vermischen und 2 TL Salz dazugeben. Jetzt den
+                    Teig
+                    kräftig kneten. Sollte der Teig noch an den Händen kleben, so lange vorsichtig Mehl unterkneten, bis
+                    der
+                    Teig sich gut verarbeiten lässt. Sobald er glatt und fest ist, die Schüssel mit einem Tuch abdecken
+                    und
+                    den Teig an einem warmen Ort 30 - 60 Minuten gehen lassen.
+                    <br>
+                    <br>
+                    In einem großen Topf oder einer tiefen Pfanne das Öl erhitzen. Die Hände etwas einölen, vom Teig
+                    kleine
+                    Stücke abreißen und zu flachen Fladen ziehen. Bestenfalls sollten die Ränder etwas dicker bleiben.
+                    Die
+                    Fladen in das heiße Öl geben. Jedoch immer nur so viele Fladen, wie nebeneinander in der Pfanne
+                    Platz
+                    haben. Sobald die eine Seite Farbe bekommen hat, umdrehen und fertig backen.
+                    <br>
+                    <br>
+                    Aus dem Öl nehmen und auf Küchenkrepp abtropfen lassen. Mit der Creme bestreichen, den Käse darüber
+                    streuen und noch heiß servieren.
+                </p>
+            </div>
+
+            <div class="recipe-from-container">
+                <h3 class="from-headline">Rezept erstellt von</h3>
+                <div class="recipe-from">
+                    <img src="./assets/img/profile.png" alt="profile image" class="profile-img">
+                    <h2 class="author">Mark</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div w3-include-html="./templates/footer.html"></div>
+
+</body>
+
+</html>

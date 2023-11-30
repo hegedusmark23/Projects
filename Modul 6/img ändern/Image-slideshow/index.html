@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+
+    <style>
+        img {
+            height: 50vh;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            object-position: top;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        button{
+            margin: 10px
+        }
+
+        .img-container {
+            height: 50vh;
+            margin: 100px 0;
+            border: black;
+            border-style: solid;
+            border-radius: 23px;
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .margin {
+            margin: 0 300px;
+        }
+        
+        .opacity{
+            opacity: 0.8;
+        }
+    </style>
+
+    <script>
+        let imgs = ['img.jpg', 'img2.jpg', 'img3.jpg'];
+        let currentImage = 0;
+
+        function slideShow(imgs){
+            showImage(currentImage);
+            currentImage++;
+            setTimeout(slideShow, 1000);
+            if (currentImage == 3) {
+                currentImage = 0;
+            }
+
+            document.getElementById('img').classList.add('opacity');
+        }
+
+        function showImage(i){
+            document.getElementById('img').src = imgs[i];
+        }
+
+        
+
+    </script>
+
+</head>
+
+<body>
+
+    <section class="margin">
+        <div class="img-container">
+            <img id="img" src="./img.jpg" alt="image">
+            <button id="button" onclick="slideShow(imgs)">Start Slideshow</button>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

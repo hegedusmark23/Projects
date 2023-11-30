@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .remove-button {
+            text-decoration: none;
+            background-color: black;
+            border-radius: 50%;
+            padding: 3px;
+            color: white;
+        }
+
+        li {
+            padding-top: 10px
+        }
+    </style>
+    <script>
+        let names = []
+
+        function showNames() {
+            let list = document.getElementById('list');
+
+            for (let i = 0; i < names.length; i++) {
+                list.innerHTML += `<li>${names[i]} <button onclick="removeName('+ i +')"> x</button></li>`;
+
+            }
+
+
+        }
+
+        function addName() {
+
+            if (names.length <= 4) {
+                let name = document.getElementById('input').value;
+                document.getElementById('list').innerHTML = '';
+                names.push(name);
+                showNames();
+                document.getElementById('input').value = '';
+            } else {
+                alert('Maximalen Namen erreicht');
+            }
+
+        }
+
+        function removeName(i) {
+            names.splice(i, 1);
+            showNames();
+         }
+
+    </script>
+</head>
+
+<body onload="showNames()">
+    <input id="input" type="text" placeholder="Neue Aufgabe"><button onclick="addName()">Hinzufügen</button>
+    <ul id="list">
+
+    </ul>
+
+
+</body>
+
+</html>

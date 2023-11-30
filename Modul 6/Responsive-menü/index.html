@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .menu {
+            height: 50px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .overlay-menu {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 100vh;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 2;
+            border-left: 1px solid black;
+            transform: translateX(501px);
+            transition: all 225ms ease-in-out;
+
+        }
+
+        .show-overlay-menu {
+            transform: translateX(0);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+    </style>
+
+    <script>
+
+        function showMenu() {
+            document.getElementById('menu').classList.add('show-overlay-menu');
+        }
+
+        function closeMenu() {
+            document.getElementById('menu').classList.remove('show-overlay-menu');
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Responsive Menü</h1>
+
+    <img onclick="showMenu()" class="menu" src="./bars-solid.svg" alt="icon">
+
+    <div id="menu" class="overlay-menu">
+        <div class="menu-links">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </div>
+        <div>
+            <img onclick="closeMenu()" src="./bars-solid.svg" class="menu" alt="icon">
+        </div>
+    </div>
+</body>
+
+</html>
