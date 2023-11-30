@@ -1,0 +1,16 @@
+body{
+    min-height: 100vh;
+    background-color: black;
+}
+
+main{
+    height: 94.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-footer{
+    display: flex;
+    justify-content: space-between;
+}
