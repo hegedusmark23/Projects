@@ -101,10 +101,11 @@ function showResult(){
     document.getElementById('result').innerHTML = sum+'/5';
 }
 
-function restartQuiz(){     // Restarts the quiz.
+function restartQuiz(){     // Restarts the quiz, makes the array empty again.
     document.getElementById('end-screen').classList.add('d-none');
     document.getElementById('card-body').classList.remove('d-none');
     currentQuestion = 0;
+    result = [];
     renderCard();
 }
 
