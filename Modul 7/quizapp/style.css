@@ -1,6 +1,6 @@
 body{
     min-height: 100vh;
-    background-color: black;
+    background-color: #242424;
 }
 
 main{
@@ -13,4 +13,49 @@ main{
 .question-footer{
     display: flex;
     justify-content: space-between;
+}
+
+.answer:hover{
+    cursor: pointer;
+    -webkit-box-shadow:inset 0px 0px 2px 4px rgb(82, 82, 82);
+    -moz-box-shadow:inset 0px 0px 0px 4px rgb(82, 82, 82);
+    box-shadow:inset 0px 0px 0px 4px rgb(82, 82, 82);
+}
+
+.makecardgreen{
+    background-color: green;
+    color: white;
+}
+
+.makecardred{
+    background-color: red;
+    color: white;
+}
+
+.d-none{
+    display: none;
+} 
+
+.d-flex{
+    display: flex;
+}
+
+.end-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.end-screen-img{
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.end-screen-footer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    padding-top: 30px;
 }

@@ -10,7 +10,7 @@
   <script src="./script.js"></script>
 </head>
 
-<body>
+<body onload="renderCard()">
 
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
@@ -19,41 +19,28 @@
   </nav>
 
   <main>
-    <div class="card" style="width: 30rem;">
+    <div id="card" class="card" style="width: 30rem;">
       <img src="./img/background.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Frage</h5>
-
-        <div class="card mb-2">
-          <div class="card-body">
-            This is some text within a card body.
-          </div>
+      <div class="end-screen d-none" id="end-screen">
+        <img class="end-screen-img" src="./img/trophy.jpg" alt="">
+        <h4>Quiz Beendet!</h4>
+        <div class="end-screen-footer">
+          <b>Ihr Ergebnis:</b><b id="result"></b>
+         <button onclick="restartQuiz()" class="btn btn-secondary">Quiz wiederholen</button>
         </div>
-
-        <div class="card mb-2">
-          <div class="card-body">
-            This is some text within a card body.
-          </div>
-        </div>
-
-        <div class="card mb-2">
-          <div class="card-body">
-            This is some text within a card body.
-          </div>
-        </div>
-
-        <div class="card mb-2">
-          <div class="card-body">
-            This is some text within a card body.
-          </div>
-        </div>
-
-      <div class="question-footer">
-        <div><b>1</b> von <b>5</b> Fragen</div>
-        <a href="#" class="btn btn-secondary">Nächste Frage</a>
       </div>
+      <div id="card-body" class="card-body">
+
       </div>
+
     </div>
+
+    <audio id="right">
+      <source src="./img/buzzer-rightanswer.mp3" type="audio/ogg">
+    </audio>
+    <audio id="wrong">
+     <source src="./img/wrong-answer-2261.mp3" type="audio/mpeg">
+    </audio>
   </main>
 </body>
 

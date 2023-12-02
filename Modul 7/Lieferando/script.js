@@ -146,7 +146,7 @@ function renderMenu() {
 
 function generateMenu(i){
     const food = foods[i]
-    return `<div onclick="addToBasket(${i})" class="food-div">
+    return /*html*/`<div onclick="addToBasket(${i})" class="food-div">
         <div class="food-layout">
             <span class="food-text">
                 <div class="name-info-div">
