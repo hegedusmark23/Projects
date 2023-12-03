@@ -43,12 +43,11 @@ let questions = [
 
 let currentQuestion = 0;
 let result = [];
+let barwidth = 0;
 
 function generateCardHtml() {    // Generates HTML
     let question = questions[currentQuestion];
     return /*html*/`
-
-
         <h5 class="card-title">${question['question']}</h5>
         <div id="answer_1" class="card mb-2 answer" onclick="answer('answer_1')">
           <div class="card-body">
@@ -80,32 +79,62 @@ function generateCardHtml() {    // Generates HTML
 
 function renderCard() {                 // Renders the content of the quiz.
     if (currentQuestion >= questions.length) {
-        document.getElementById('next-question-btn').innerHTML = 'Quiz Beenden';
         document.getElementById('end-screen').classList.remove('d-none');
         document.getElementById('card-body').classList.add('d-none');
+        let img = document.getElementById('top-image');
+        img.src = "img/trophy.jpg";
     } else {
         let card = document.getElementById('card-body');
         card.innerHTML = generateCardHtml();
         document.getElementById('question-number').innerHTML = currentQuestion + 1;
     }
-
     showResult();
+    showProgressBar();
 }
 
-function showResult(){
+/*function changeButtonText(){
+    if (currentQuestion = 4) {
+        document.getElementById('next-question-btn').innerHTML = 'Quiz Beenden';
+    }
+}*/
+
+function showResult() {            //Shows how many correct answers the user had.
     let sum = 0;
-    for (let i = 0; i < result.length; i++ ) {
+    for (let i = 0; i < result.length; i++) {
         sum += result[i];
     }
-
-    document.getElementById('result').innerHTML = sum+'/5';
+    document.getElementById('result').innerHTML = sum + ' von 5 Fragen richtig beantwortet!';
 }
 
-function restartQuiz(){     // Restarts the quiz, makes the array empty again.
+function diasbleOnclick(){        //Diasbles the answer() function after picking an answer.
+    let answer1 = document.getElementById("answer_1"); 
+    let answer2 = document.getElementById("answer_2"); 
+    let answer3 = document.getElementById("answer_3"); 
+    let answer4 = document.getElementById("answer_4"); 
+    answer1.onclick = null;
+    answer2.onclick = null;
+    answer3.onclick = null;
+    answer4.onclick = null;
+}
+
+function increaseProgressBar() {  // Increases the value of the progress bar by 1.
+    barwidth++;
+}
+
+function showProgressBar() {             // Renders the current level and percentage of the progress bar.
+    let bar = document.getElementById('progress-bar');
+    bar.style.width = barwidth * 20 + "%";
+    bar.innerHTML = barwidth * 20 + "%";
+}
+
+function restartQuiz() {     // Restarts the quiz, makes the array empty again.
     document.getElementById('end-screen').classList.add('d-none');
     document.getElementById('card-body').classList.remove('d-none');
+    let img = document.getElementById('top-image');
+    img.src = "img/background.jpg";
     currentQuestion = 0;
     result = [];
+    barwidth = 0;
     renderCard();
 }
 
@@ -120,19 +149,42 @@ function nextQuestion() {   // Jumps on the next question.
     showCurrentQuestionNumber();
 }
 
-function answer(selection) {                        // Selects the answer, marks the right with green, and the false with red.
-    let question = questions[currentQuestion]
-    let selectedQuestionNumber = selection.slice(-1);
-    let rightAnswer = `answer_${question['right_answer']}`;
-    if (selectedQuestionNumber == question['right_answer']) {
-        document.getElementById(selection).classList.add('makecardgreen');
-        document.getElementById('right').play();
+function answer(selection) {                            // Selects the answer, marks the right with green, and the false with red.
+    let question = questions[currentQuestion];
+    let selectedQuestionNumber = parseInt(selection.slice(-1), 10);
+    let selectedElement = document.getElementById(selection);
+    let rightAnswerElement = document.getElementById(`answer_${question['right_answer']}`);
+    if (selectedQuestionNumber === question['right_answer']) {
+        markAnswer(selectedElement, 'makecardgreen');
+        playSound('right');
         result.push(1);
     } else {
-        document.getElementById(selection).classList.add('makecardred');
-        document.getElementById(rightAnswer).classList.add('makecardgreen');
-        document.getElementById('wrong').play();
+        markAnswer(selectedElement, 'makecardred');
+        markAnswer(rightAnswerElement, 'makecardgreen');
+        playSound('wrong');
     }
     document.getElementById('next-question-btn').disabled = false;
+    enableNextQuestionButton();
+    increaseProgressBar();
+    diasbleOnclick();
 }
 
+function markAnswer(element, className) {
+    if (element) {
+        element.classList.add(className);
+    }
+}
+
+function playSound(sound) {
+    const soundElement = document.getElementById(sound);
+    if (soundElement) {
+        soundElement.play();
+    }
+}
+
+function enableNextQuestionButton() {
+    const nextQuestionButton = document.getElementById('next-question-btn');
+    if (nextQuestionButton) {
+        nextQuestionButton.disabled = false;
+    }
+}

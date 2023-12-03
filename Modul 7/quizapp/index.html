@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.rtl.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="./script.js"></script>
+  <link rel="shortcut icon" href="./img/brain.png" type="image/x-icon">
 </head>
 
 <body onload="renderCard()">
@@ -20,15 +21,22 @@
 
   <main>
     <div id="card" class="card" style="width: 30rem;">
-      <img src="./img/background.jpg" class="card-img-top" alt="...">
-      <div class="end-screen d-none" id="end-screen">
-        <h4>Quiz Beendet!</h4>
-        <img class="end-screen-img" src="./img/trophy.jpg" alt="">
-        <div class="end-screen-footer">
-          <b>Ihr Ergebnis:</b><b id="result"></b>
-         <button onclick="restartQuiz()" class="btn btn-secondary">Quiz wiederholen</button>
+      <img src="./img/background.jpg" id="top-image" class="card-img-top" alt="...">
+      <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
+        aria-valuemin="0" aria-valuemax="100">
+        <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 0%">0%
         </div>
       </div>
+      <div class="end-screen d-none" id="end-screen">
+        <h2>Quiz beendet!</h2>
+        <div class="end-screen-footer">
+          <div class="result-div">
+            <b>Du hast</b><b id="result"></b>
+          </div>
+          <button onclick="restartQuiz()" class="btn btn-secondary">Quiz wiederholen</button>
+        </div>
+      </div>
+
       <div id="card-body" class="card-body">
 
       </div>
@@ -39,7 +47,7 @@
       <source src="./img/buzzer-rightanswer.mp3" type="audio/ogg">
     </audio>
     <audio id="wrong">
-     <source src="./img/wrong-answer-2261.mp3" type="audio/mpeg">
+      <source src="./img/wrong-answer-2261.mp3" type="audio/mpeg">
     </audio>
   </main>
 </body>

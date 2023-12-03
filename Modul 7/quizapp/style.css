@@ -1,61 +1,140 @@
-body{
+body {
     min-height: 100vh;
     background-color: #242424;
 }
 
-main{
+main {
     height: 94.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.question-footer{
+.question-footer {
     display: flex;
     justify-content: space-between;
 }
 
-.answer:hover{
+.answer:hover {
     cursor: pointer;
-    -webkit-box-shadow:inset 0px 0px 2px 4px rgb(82, 82, 82);
-    -moz-box-shadow:inset 0px 0px 0px 4px rgb(82, 82, 82);
-    box-shadow:inset 0px 0px 0px 4px rgb(82, 82, 82);
+    -webkit-box-shadow: inset 0px 0px 10px 3px rgb(82, 82, 82);
+    -moz-box-shadow: inset 0px 0px 10px 3px rgb(82, 82, 82);
+    box-shadow: inset 0px 0px 10px 3px rgb(82, 82, 82);
 }
 
-.makecardgreen{
+.makecardgreen {
     background-color: green;
     color: white;
 }
 
-.makecardred{
+.makecardred {
     background-color: red;
     color: white;
 }
 
-.d-none{
+.d-none {
     display: none;
-} 
+}
 
-.d-flex{
+.d-flex {
     display: flex;
 }
 
-.end-screen{
+.end-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px;
 }
 
-.end-screen-img{
+.end-screen-img {
     height: 200px;
     padding-bottom: 10px;
 }
 
-.end-screen-footer{
+.end-screen-footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     padding-top: 30px;
+}
+
+.result-div {
+    display: flex;
+    gap: 4px;
+    padding-bottom: 30px;
+}
+
+.progress {
+    margin: 10px 5px;
+   
+}
+
+
+
+@media(max-width:668px){
+    body{
+        background-color: white;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card-img-top{
+        display: none;
+    }
+
+
+    .card-body{
+        padding: 5px;
+    }
+
+    .answer:hover{
+        -webkit-box-shadow: inset 0px 0px 10px 2px rgb(82, 82, 82);
+        -moz-box-shadow: inset 0px 0px 10px 2px rgb(82, 82, 82);
+        box-shadow: inset 0px 0px 10px 2px rgb(82, 82, 82);
+    }
+}
+
+@media(max-width:430px) {
+    body{
+        background-color: white;
+    }
+
+    .card-img-top{
+        display: flex;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    main{
+        height: 100vh;
+    }
+
+    .card-body{
+        padding: 3px;
+    }
+
+    .answer:hover{
+        -webkit-box-shadow: inset 0px 10px 2px 2px rgb(82, 82, 82);
+        -moz-box-shadow: inset 0px 10px 0px 2px rgb(82, 82, 82);
+        box-shadow: inset 0px 0px 10px 2px rgb(82, 82, 82);
+    }
+
+    .end-screen{
+        padding: 10px;
+    }
+
+    .card{
+        padding: 11px 10px;
+    }
 }
