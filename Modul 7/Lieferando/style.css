@@ -58,7 +58,8 @@ main{
     width: 430px;
     height: 100vh;
     padding: 0 13px;
-    z-index: 1;
+    position: sticky;
+    top: 0;
 }
 
 .menu{
