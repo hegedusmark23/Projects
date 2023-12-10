@@ -1,0 +1,105 @@
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+main {
+    background-color: white;
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(45deg, #BF9568 0%, #BD686D 100%, #FBDD7B 100%);
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.75);
+    position: relative;
+    z-index: 10;
+    padding-bottom: 20px;
+}
+
+.header-logo{
+    height: 100px;
+    padding: 20px;
+
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    border-radius: 18px;
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+}
+
+input{
+    border-radius: 18px 0px 0px 18px;
+    height: 35px;
+    padding: 1px 0px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 15px;
+}
+
+.search-button{
+    color: black;
+    background-color: white;
+    border-radius: 0px 18px 18px 0px;
+    border: 1px solid;
+    text-decoration: none;
+    padding: 9px;
+    ;
+}
+
+.search-button:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    color: white;
+    border-radius: 40px;
+    box-shadow: -1px -1px 25px 0px rgba(0, 0, 0, 0.75);
+    transition: transform .2s
+}
+
+.pokedex:hover {
+    transform: scale(1.02);
+}
+
+.pokemonImage {
+    height: 160px;
+    object-fit: contain;
+    margin-top: -130px;
+    padding-bottom: 20px;
+}
+
+.info-container {
+    background-color: white;
+    border-radius: 40px;
+    margin-top: -20px;
+    min-height: 100px;
+    height: 300px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+}
+
+.pokedex-container {
+    padding: 40px;
+
+}
+
+.card-headline {
+    padding-bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
