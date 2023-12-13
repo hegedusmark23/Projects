@@ -34,7 +34,6 @@ header {
     display: flex;
     justify-content: center;
     border-radius: 18px;
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 }
 
 input{
@@ -53,7 +52,7 @@ input{
     border: 1px solid;
     text-decoration: none;
     padding: 9px;
-    ;
+    cursor: pointer;
 }
 
 .search-button:hover{
@@ -66,8 +65,9 @@ input{
     width: 250px;
     color: white;
     border-radius: 40px;
-    box-shadow: -1px -1px 25px 0px rgba(0, 0, 0, 0.75);
-    transition: transform .2s
+    box-shadow: -1px -1px 7px 1px rgba(0, 0, 0, 0.75);
+    transition: transform .2s;
+    cursor: pointer;
 }
 
 .pokedex:hover {
@@ -79,6 +79,7 @@ input{
     object-fit: contain;
     margin-top: -130px;
     padding-bottom: 20px;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 .info-container {
@@ -108,73 +109,109 @@ input{
 }
 
 .bug{
-    background-color: #A8B820;
+    background-color: #A8B820e8;
 }
 
 .dark{
-    background-color: #040706;
+    background-color: #040706e8;
 }
 
 .dragon{
-    background-color: #448B95;
+    background-color: #448B95e8;
 }
 
 .electric{
-    background-color: #E3E32B;
+    background-color: #E3E32Be8;
 }
 
 .fairy{
-    background-color: #971944;
+    background-color: #971944e8;
 }
 
 .fire{
-    background-color: #994025;
+    background-color: #994025e8;
 }
 
 .fighting{
-    background-color: #AB1F23;
+    background-color: #AB1F23e8;
 }
 
 .flying{
-    background-color: #4A677D;
+    background-color: #4A677De8;
 }
 
 .ghost{
-    background-color: #31336B;
+    background-color: #31336Be8;
 }
 
 .grass{
-    background-color: #147B3D;
+    background-color: #147B3De8;
 }
 
 .ground{
-    background-color: #A9702C;
+    background-color: #A9702Ce8;
 }
 
 .ice{
-    background-color: #86D2F5;
+    background-color: #86d2f5e8;
 }
 
 .normal{
-    background-color: #75515B;
+    background-color: #75515Be8;
 }
 
 .poison{
-    background-color: #5E2D88;
+    background-color: #5E2D88e8;
 }
 
 .psychic{
-    background-color: #A42A6C;
+    background-color: #A42A6Ce8;
 }
 
 .rock{
-    background-color: #48180B;
+    background-color: #48180Be8;
 }
 
 .steel{
-    background-color: #5F756D;
+    background-color: #5F756De8;
 }
 
 .water{
-    background-color: #1552E2;
+    background-color: #1552E2e8;
+}
+
+.d-none{
+    display: none;
+}
+
+.back-btn{
+    margin-left: 10px;
+    border-radius: 17px;
+    color: black;
+    background-color: white;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.back-btn:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.opened-card {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+.hidden {
+    display: none;
 }

@@ -19,16 +19,15 @@
         <img class="header-logo" src="./img/pokemon-logo.png" alt="">
         <div class="search">
             <input type="text" required name="search" id="input" placeholder="Search ...">
-            <a class="search-button"  href="">Search</a>
+            <button onclick="searchPokemon()" class="search-button">Search</button>
+            <button onclick="goBack()" id="back-btn" class="back-btn d-none">Back</button>
         </div>
     </header>
     <main>
         <div class="pokedex-container" id="pokedex-container"></div>
+        <div class="opened-card-container" id="opened-card"></div>
     </main>
 
-    <footer>
-
-    </footer>
     <script src="script.js"></script>
 </body>
 
