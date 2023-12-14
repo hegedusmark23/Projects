@@ -11,7 +11,7 @@ async function getApi() {     //Fetches the API.
     let url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
     let response = await fetch(url);
     let allPokemon = await response.json();
-    console.log(allPokemon);
+    console.log(allPokemon['results'][0]['url']);
 
     await addPokemonToArray(allPokemon)
     await getPokemon(allPokemon);
@@ -38,15 +38,19 @@ async function getPokemon(allPokemon) {                // Extracts the detaliled
 
 }
 
-function generateCardHtml(imageSrc, i) {   // Generates HTML for the cards.
+function generateCardHtml(imageSrc, i) {
     return /*html*/`
-    <div onclick="openCard(event)" id="pokedex${i}" class="pokedex">
+    <div onclick="openCard(event, ${i})" id="pokedex${i}" class="pokedex">
         <div class="card-headline">
-            <h1 id="pokemonName${i}"></h1>
-            <p id="PokemonId${i}">#</p>
+            <div class="headline">
+                <h1 id="pokemonName${i}"></h1>
+                <p id="PokemonId${i}">#</p>
+            </div>
+            <b class="pokemon-type" id="PokemonType${i}"></b>
+            
         </div>
-           <img class="pokemonImage" src="${imageSrc}">  
         
+        <img class="pokemonImage" src="${imageSrc}">  
     </div>
     `;
 }
@@ -55,6 +59,7 @@ function renderPokemonInfo(currentPokemon, i) {   // Adds the details to the car
     let pokemonName = pokemons[i]
     document.getElementById(`pokemonName${i}`).innerHTML = pokemonName[0].toUpperCase() + pokemonName.substring(1);
     document.getElementById(`PokemonId${i}`).innerHTML += currentPokemon['id'];
+    document.getElementById(`PokemonType${i}`).innerHTML += currentPokemon['types'][0]['type']['name'] + ' type';
     generateBackgroundColor(currentPokemon, i)
 }
 
@@ -141,14 +146,15 @@ function generateBackgroundColor(currentPokemon, i) {         // Sorts out the b
     }
 }
 
-function openCard(event) {
+
+function openCard(event, i) {
     let cardId = event.currentTarget.id;
     let index = cardId.replace('pokedex', '');
     index = parseInt(index, 10);
-    displayOpenedCard(index);
+    displayOpenedCard(index, i);
 }
 
-function displayOpenedCard(index) {
+function displayOpenedCard(index,i) {
     let clickedPokemon = pokemons[index];
     let url = `https://pokeapi.co/api/v2/pokemon/${clickedPokemon}`;
 
@@ -156,19 +162,13 @@ function displayOpenedCard(index) {
         .then(response => response.json())
         .then(data => {
             let imageSrc = data.sprites.other.dream_world.front_default;
-            let openedCardHtml = generateOpenedCardHtml(imageSrc, data);
-
-            // Apply the opened card HTML to the 'opened-card' div
+            let openedCardHtml = generateOpenedCardHtml(imageSrc, currentPokemon,i);
             let openedCardContainer = document.getElementById('opened-card');
-            openedCardContainer.innerHTML = openedCardHtml;
-
-            // Apply the background color to the opened card
-            generateBackgroundColor(data, 0);
-
-            // Display the opened card
-            openedCardContainer.style.display = 'flex'; // or 'block' based on your container structure
+           openedCardContainer.innerHTML = openedCardHtml;
+            openedCardContainer.style.display = 'flex';
+             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
+            document.getElementById(`PokemonOpenedId${i}`).innerHTML += currentPokemon['id'];
         })
-        .catch(error => console.error('Error fetching Pokemon data:', error));
 }
 
 function closeOpenedCard() {
@@ -177,26 +177,22 @@ function closeOpenedCard() {
 }
 
 
-document.addEventListener('click', function (event) {
-    if (document.querySelector('.opened-card')) {
-        // If the opened card is currently visible
-        if (!event.target.closest('.opened-card')) {
-            // If the click is outside of the opened card
-            closeOpenedCard();
-        }
-    }
-});
 
 
-function generateOpenedCardHtml(imageSrc, currentPokemon) {
-    return `
-    <div class="openedCard">
-        <div class="card-headline">
-            <h1 id="pokemonName">${currentPokemon.name}</h1>
-            <p id="PokemonId">#${currentPokemon.id}</p>
-        </div>
+
+function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
+    return /*html*/`
+    <div  class="openedCard" >
+        
         <div class="info-container" id="info-container">
-            <img class="pokemonImage" src="${imageSrc}">  
+            <img class="pokemonOpenedImage" src="${imageSrc}">
+            <div class="card-opened-headline">
+                <h1 id="pokemonOpenedName${i}"></h1>
+                <p id="PokemonOpenedId${i}">#</p>
+            </div>
+        </div>
+        <div class="card-opened-headline">
+            
         </div>
     </div>
     `;

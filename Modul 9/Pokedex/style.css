@@ -85,12 +85,14 @@ input{
 .info-container {
     background-color: white;
     border-radius: 40px;
-    margin-top: -20px;
+    margin-top: -36px;
     min-height: 100px;
     height: 300px;
     border: 1px solid gray;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .pokedex-container {
@@ -106,10 +108,18 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.headline{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
 }
 
 .bug{
-    background-color: #A8B820e8;
+    background-color: #a1aa51e8;
 }
 
 .dark{
@@ -121,7 +131,7 @@ input{
 }
 
 .electric{
-    background-color: #E3E32Be8;
+    background-color: #b3b325e8;
 }
 
 .fairy{
@@ -197,7 +207,7 @@ input{
     background-color: rgb(235, 235, 235);
 }
 
-.opened-card {
+.opened-card-container {
     display: none;
     position: fixed;
     top: 0;
@@ -210,8 +220,26 @@ input{
     z-index: 1000;
 }
 
+.openedCard{
+    width: 300px;
+}
 
+.card-opened-headline{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
 
-.hidden {
-    display: none;
+.pokemonOpenedImage{
+    height: 200px;
+    object-fit: contain;
+    margin-top: -280px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.pokemon-type{
+    background-color: #ffffff2e;
+    padding: 10px;
+    border-radius: 18px;
 }
