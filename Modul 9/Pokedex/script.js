@@ -154,20 +154,19 @@ function openCard(event, i) {
     displayOpenedCard(index, i);
 }
 
-function displayOpenedCard(index,i) {
+function displayOpenedCard(index, i) {
     let clickedPokemon = pokemons[index];
     let url = `https://pokeapi.co/api/v2/pokemon/${clickedPokemon}`;
-
     fetch(url)
         .then(response => response.json())
         .then(data => {
             let imageSrc = data.sprites.other.dream_world.front_default;
-            let openedCardHtml = generateOpenedCardHtml(imageSrc, currentPokemon,i);
+            let openedCardHtml = generateOpenedCardHtml(imageSrc, currentPokemon, i);
             let openedCardContainer = document.getElementById('opened-card');
-           openedCardContainer.innerHTML = openedCardHtml;
+            openedCardContainer.innerHTML = openedCardHtml;
             openedCardContainer.style.display = 'flex';
-             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
-            document.getElementById(`PokemonOpenedId${i}`).innerHTML += currentPokemon['id'];
+            document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
+            document.getElementById(`PokemonOpenedId${i}`).innerHTML += data['id'];
         })
 }
 
