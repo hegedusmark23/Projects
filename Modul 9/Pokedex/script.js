@@ -1,21 +1,18 @@
 let allPokemon;
 let pokemons = [];
 let currentPokemon;
-
+let loadedPokemons = 20;
 
 async function init() {
     await getApi();
 }
 
 async function getApi() {     //Fetches the API.
-    let url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+    let url = 'https://pokeapi.co/api/v2/pokemon?limit=1000';
     let response = await fetch(url);
     let allPokemon = await response.json();
-    console.log(allPokemon['results'][0]['url']);
-
     await addPokemonToArray(allPokemon)
     await getPokemon(allPokemon);
-
 }
 
 
@@ -28,8 +25,15 @@ async function addPokemonToArray(allPokemon) {    //Adds the names of the Pokemo
     }
 }
 
+function loadMorePokemons(){
+    let listOfPokemon = document.getElementById('pokedex-container');
+    loadedPokemons += 20;
+    listOfPokemon.innerHTML = '';
+    getApi();
+}
+
 async function getPokemon(allPokemon) {                // Extracts the detaliled JSON of the Pokemons from the API.
-    for (let i = 0; i < 151; i++) {
+    for (let i = 0; i < loadedPokemons; i++) {
         let currentPokemonUrl = allPokemon['results'][i]['url'];
         let response = await fetch(currentPokemonUrl);
         currentPokemon = await response.json();
@@ -38,22 +42,6 @@ async function getPokemon(allPokemon) {                // Extracts the detaliled
 
 }
 
-function generateCardHtml(imageSrc, i) {
-    return /*html*/`
-    <div onclick="openCard(event, ${i})" id="pokedex${i}" class="pokedex">
-        <div class="card-headline">
-            <div class="headline">
-                <h1 id="pokemonName${i}"></h1>
-                <p id="PokemonId${i}">#</p>
-            </div>
-            <b class="pokemon-type" id="PokemonType${i}"></b>
-            
-        </div>
-        
-        <img class="pokemonImage" src="${imageSrc}">  
-    </div>
-    `;
-}
 
 function renderPokemonInfo(currentPokemon, i) {   // Adds the details to the cards in the unopened form.
     let pokemonName = pokemons[i]
@@ -72,6 +60,7 @@ function renderPokemonCards(currentPokemon, i) {        // Renders the Cards.
 
 function searchPokemon() {
     let search = document.getElementById('input').value;
+    document.getElementById('load-more-button');
     search = search.toLowerCase();
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
@@ -79,6 +68,8 @@ function searchPokemon() {
             searchPokemonData(pokemon, i);
         }
     }
+    document.getElementById('load-more-button').classList.add("d-none");
+    
 }
 
 async function searchPokemonData(pokemon, i) {
@@ -87,17 +78,20 @@ async function searchPokemonData(pokemon, i) {
     currentPokemon = await response.json();
     let listOfPokemon = document.getElementById('pokedex-container');
     listOfPokemon.innerHTML = '';
+    document.getElementById('input').value = '';
     renderPokemonCards(currentPokemon, i);
     document.getElementById('back-btn').classList.remove('d-none');
-}
+    }
 
 
 
 function goBack() {
     let listOfPokemon = document.getElementById('pokedex-container');
+    let button = document.getElementById('load-more-button');
     listOfPokemon.innerHTML = '';
     init();
     document.getElementById('back-btn').classList.add('d-none');
+    document.getElementById('load-more-button').classList.remove('d-none');
 }
 
 
@@ -154,6 +148,7 @@ function openCard(event, i) {
     displayOpenedCard(index, i);
 }
 
+
 function displayOpenedCard(index, i) {
     let clickedPokemon = pokemons[index];
     let url = `https://pokeapi.co/api/v2/pokemon/${clickedPokemon}`;
@@ -167,7 +162,9 @@ function displayOpenedCard(index, i) {
             openedCardContainer.style.display = 'flex';
             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
             document.getElementById(`PokemonOpenedId${i}`).innerHTML += data['id'];
+            showAbout(data,i);
         })
+        
 }
 
 function closeOpenedCard() {
@@ -175,24 +172,22 @@ function closeOpenedCard() {
     openedCardContainer.style.display = 'none';
 }
 
-
-
-
-
-function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
-    return /*html*/`
-    <div  class="openedCard" >
-        
-        <div class="info-container" id="info-container">
-            <img class="pokemonOpenedImage" src="${imageSrc}">
-            <div class="card-opened-headline">
-                <h1 id="pokemonOpenedName${i}"></h1>
-                <p id="PokemonOpenedId${i}">#</p>
-            </div>
-        </div>
-        <div class="card-opened-headline">
-            
-        </div>
-    </div>
-    `;
+function showAbout(data,i) {
+    let about = document.getElementById('opened-card-content');
+    about.innerHTML = generateAboutHtml(i);
+    document.getElementById(`weight${i}`).innerHTML = data['weight'] + ' lbs';
+    document.getElementById(`height${i}`).innerHTML = data['height'] + '0 cm';
+    for (let j = 0; j < data['abilities'].length; j++) {
+        let ability = data['abilities'][j]['ability']['name']
+        document.getElementById(`abilities${i}`).innerHTML += `<li>${ability}</li>`;
+    }
 }
+
+function showStats() {
+    let stats = document.getElementById('opened-card-content')
+    stats.innerHTML = generatechartHtml();
+}
+
+
+
+

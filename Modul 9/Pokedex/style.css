@@ -6,9 +6,9 @@ body {
 
 main {
     background-color: white;
-    object-fit: fill;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 header {
@@ -17,7 +17,10 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: linear-gradient(45deg, #BF9568 0%, #BD686D 100%, #FBDD7B 100%);
+    background-image: url("./img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 30%;
     box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.75);
     position: relative;
     z-index: 10;
@@ -234,7 +237,7 @@ input{
 .pokemonOpenedImage{
     height: 200px;
     object-fit: contain;
-    margin-top: -280px;
+    margin-top: -190px;
     filter: drop-shadow(2px 4px 6px black);
 }
 
@@ -242,4 +245,64 @@ input{
     background-color: #ffffff2e;
     padding: 10px;
     border-radius: 18px;
+}
+
+.opened-card-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(138, 136, 136);
+}
+
+a:hover{
+    color: black;
+}
+
+.line{
+    height: 2px;
+    width: 245px;
+    background-color: gray;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.opened-card-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.about-description{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    gap: 20px;
+    color: rgb(138, 136, 136);
+}
+
+.about-data{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.load-more-button{
+    margin-bottom: 20px;
 }
