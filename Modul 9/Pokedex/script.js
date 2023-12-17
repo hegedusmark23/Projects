@@ -156,7 +156,7 @@ function displayOpenedCard(index, i) {
         .then(response => response.json())
         .then(data => {
             let imageSrc = data.sprites.other.dream_world.front_default;
-            let openedCardHtml = generateOpenedCardHtml(imageSrc, currentPokemon, i);
+            let openedCardHtml = generateOpenedCardHtml(imageSrc, currentPokemon, i, data);
             let openedCardContainer = document.getElementById('opened-card');
             openedCardContainer.innerHTML = openedCardHtml;
             openedCardContainer.style.display = 'flex';
@@ -177,7 +177,7 @@ function showAbout(data,i) {
     about.innerHTML = generateAboutHtml(i);
     document.getElementById(`weight${i}`).innerHTML = data['weight'] + ' lbs';
     document.getElementById(`height${i}`).innerHTML = data['height'] + '0 cm';
-    for (let j = 0; j < data['abilities'].length; j++) {
+    for (let j = 0; j < 2; j++) {
         let ability = data['abilities'][j]['ability']['name']
         document.getElementById(`abilities${i}`).innerHTML += `<li>${ability}</li>`;
     }

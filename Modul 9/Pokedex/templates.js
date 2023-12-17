@@ -17,7 +17,7 @@ function generateCardHtml(imageSrc, i) {
     `;
 }
 
-function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
+function generateOpenedCardHtml(imageSrc, currentPokemon, i, data) {
     return /*html*/`
     <div  class="openedCard" >
         
@@ -28,7 +28,7 @@ function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
                 <p id="PokemonOpenedId${i}">#</p>
             </div>
             <div class="opened-card-links">
-                <a onmouseover="displayOpenedCard(${i})">About</a>
+                <a onmouseover="showAbout(${i})">About</a>
                 <a onmouseover="showStats(${i})">Stats</a>
             </div>
             <div class="line"></div>
