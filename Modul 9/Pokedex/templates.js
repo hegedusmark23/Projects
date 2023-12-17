@@ -28,8 +28,8 @@ function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
                 <p id="PokemonOpenedId${i}">#</p>
             </div>
             <div class="opened-card-links">
-                <a>About</a>
-                <a onmouseover="showStats()">Stats</a>
+                <a onmouseover="displayOpenedCard(${i})">About</a>
+                <a onmouseover="showStats(${i})">Stats</a>
             </div>
             <div class="line"></div>
             <div id="opened-card-content" class="opened-card-content"></div>
@@ -51,16 +51,17 @@ function generateAboutHtml(i) {
             <b id="height${i}"></b>
             <b id="abilities${i}"></b>
         </div>
-    </div>   
+    </div>
+       
     `;
 }
 
 
 
-function generatechartHtml(){
+function generatechartHtml(i){
     return `
     <div>
-        <canvas width="500" id="statsChart"></canvas>
+        <canvas width="340" id="statsChart${i}"></canvas>
       </div>
     `;
 }

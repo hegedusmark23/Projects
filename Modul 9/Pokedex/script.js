@@ -1,4 +1,4 @@
-let allPokemon;
+let allPokemon = [];
 let pokemons = [];
 let currentPokemon;
 let loadedPokemons = 20;
@@ -162,7 +162,7 @@ function displayOpenedCard(index, i) {
             openedCardContainer.style.display = 'flex';
             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
             document.getElementById(`PokemonOpenedId${i}`).innerHTML += data['id'];
-            showAbout(data,i);
+           showAbout(data,i);
         })
         
 }
@@ -182,12 +182,20 @@ function showAbout(data,i) {
         document.getElementById(`abilities${i}`).innerHTML += `<li>${ability}</li>`;
     }
 }
-
-function showStats() {
-    let stats = document.getElementById('opened-card-content')
-    stats.innerHTML = generatechartHtml();
+ 
+async function showStats(index) {
+    let stats = document.getElementById('opened-card-content');
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokemons[index]}/`;
+    let response = await fetch(url);
+    let pokemon = await response.json();
+    allPokemon[index] = pokemon;
+    stats.innerHTML = generatechartHtml(index);
+    renderChart(index);
 }
 
-
-
+async function renderChartsForAllPokemons() {
+    for (let i = 0; i < pokemons.length; i++) {
+        await showStats(i);
+    }
+}
 
