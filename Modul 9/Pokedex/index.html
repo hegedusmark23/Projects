@@ -14,8 +14,8 @@
 </head>
 
 <body onload="init()">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
     <header>
         <img class="header-logo" src="./img/pokemon-logo.png" alt="">
         <div class="search">
@@ -26,14 +26,14 @@
     </header>
     <main>
         <div class="pokedex-container" id="pokedex-container"></div>
-        <div onclick="closeOpenedCard()" class="opened-card-container" id="opened-card"></div>
-        <a href="#bottom" id="load-more-button" class="load-more-button" onclick="loadMorePokemons()">Load more</a>
+        <div class="opened-card-container" id="opened-card"></div>
+        <a id="load-more-button" class="load-more-button" onclick="loadMorePokemons()">Load more</a>
         <div id="bottom"></div>
     </main>
 
     <script src="templates.js"></script>
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>

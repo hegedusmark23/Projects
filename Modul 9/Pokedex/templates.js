@@ -17,22 +17,25 @@ function generateCardHtml(imageSrc, i) {
     `;
 }
 
-function generateOpenedCardHtml(imageSrc, currentPokemon, i, data) {
+function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
     return /*html*/`
     <div  class="openedCard" >
         
-        <div class="info-container" id="info-container">
+    <div class="info-container" id="info-container">
+        <div class="image-headline">
             <img class="pokemonOpenedImage" src="${imageSrc}">
+            <img class="close-element" onclick="closeOpenedCard()" src="./img/circle-x.png" alt="">
+        </div>
             <div class="card-opened-headline">
                 <h1 id="pokemonOpenedName${i}"></h1>
                 <p id="PokemonOpenedId${i}">#</p>
             </div>
-            <div class="opened-card-links">
-                <a onmouseover="showAbout(${i})">About</a>
-                <a onmouseover="showStats(${i})">Stats</a>
-            </div>
+            <p class="description">About</p>
+            <div class="line"></div> 
+            <div id="opened-card-content" class="opened-card-content"></div>  
+            <p class="description">Stats</p>
             <div class="line"></div>
-            <div id="opened-card-content" class="opened-card-content"></div>
+            <div id="opened-chart-content" class="opened-card-content"></div>
         </div>
     </div>
     `;
@@ -58,7 +61,7 @@ function generateAboutHtml(i) {
 
 
 
-function generatechartHtml(i){
+function generatechartHtml(i) {
     return `
     <div>
         <canvas width="340" id="statsChart${i}"></canvas>

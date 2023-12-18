@@ -25,11 +25,16 @@ async function addPokemonToArray(allPokemon) {    //Adds the names of the Pokemo
     }
 }
 
-function loadMorePokemons(){
+function loadMorePokemons() {
     let listOfPokemon = document.getElementById('pokedex-container');
     loadedPokemons += 20;
     listOfPokemon.innerHTML = '';
     getApi();
+    scrollToBottom();
+}
+
+function scrollToBottom() {
+    document.getElementById('bottom').scrollIntoView();
 }
 
 async function getPokemon(allPokemon) {                // Extracts the detaliled JSON of the Pokemons from the API.
@@ -41,7 +46,6 @@ async function getPokemon(allPokemon) {                // Extracts the detaliled
     }
 
 }
-
 
 function renderPokemonInfo(currentPokemon, i) {   // Adds the details to the cards in the unopened form.
     let pokemonName = pokemons[i]
@@ -69,7 +73,7 @@ function searchPokemon() {
         }
     }
     document.getElementById('load-more-button').classList.add("d-none");
-    
+
 }
 
 async function searchPokemonData(pokemon, i) {
@@ -81,7 +85,7 @@ async function searchPokemonData(pokemon, i) {
     document.getElementById('input').value = '';
     renderPokemonCards(currentPokemon, i);
     document.getElementById('back-btn').classList.remove('d-none');
-    }
+}
 
 
 
@@ -162,9 +166,10 @@ function displayOpenedCard(index, i) {
             openedCardContainer.style.display = 'flex';
             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
             document.getElementById(`PokemonOpenedId${i}`).innerHTML += data['id'];
-           showAbout(data,i);
+            showAbout(data, i);
+            showStats(index)
         })
-        
+
 }
 
 function closeOpenedCard() {
@@ -172,7 +177,7 @@ function closeOpenedCard() {
     openedCardContainer.style.display = 'none';
 }
 
-function showAbout(data,i) {
+function showAbout(data, i) {
     let about = document.getElementById('opened-card-content');
     about.innerHTML = generateAboutHtml(i);
     document.getElementById(`weight${i}`).innerHTML = data['weight'] + ' lbs';
@@ -182,9 +187,9 @@ function showAbout(data,i) {
         document.getElementById(`abilities${i}`).innerHTML += `<li>${ability}</li>`;
     }
 }
- 
+
 async function showStats(index) {
-    let stats = document.getElementById('opened-card-content');
+    let stats = document.getElementById('opened-chart-content');
     let url = `https://pokeapi.co/api/v2/pokemon/${pokemons[index]}/`;
     let response = await fetch(url);
     let pokemon = await response.json();
