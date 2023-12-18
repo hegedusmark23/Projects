@@ -31,7 +31,7 @@ function loadMorePokemons() {
     loadedPokemons += 7;
     listOfPokemon.innerHTML = '';
     getApi();
-    
+
 }
 
 function scrollToBottom() {
@@ -68,14 +68,16 @@ function renderPokemonCards(currentPokemon, i) {        // Renders the Cards.
     renderPokemonInfo(currentPokemon, i);
 }
 
-function searchPokemon() {
+function searchPokemon(event) {
     let search = document.getElementById('input').value;
     document.getElementById('load-more-button');
     search = search.toLowerCase();
-    for (let i = 0; i < pokemons.length; i++) {
-        const pokemon = pokemons[i];
-        if (pokemon.includes(search)) {
-            searchPokemonData(pokemon, i);
+    if (event.key === "Enter" && search.trim() !== '') {
+        for (let i = 0; i < pokemons.length; i++) {
+            const pokemon = pokemons[i];
+            if (pokemon.includes(search)) {
+                searchPokemonData(pokemon, i);
+            }
         }
     }
     document.getElementById('load-more-button').classList.add("d-none");

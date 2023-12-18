@@ -19,7 +19,7 @@
     <header>
         <img class="header-logo" src="./img/pokemon-logo.png" alt="">
         <div class="search">
-            <input type="text" required name="search" id="input" placeholder="Search ...">
+            <input onkeydown="searchPokemon(event)" type="text" required name="search" id="input" placeholder="Search ...">
             <button onclick="searchPokemon()" class="search-button">Search</button>
             <button onclick="goBack()" id="back-btn" class="back-btn d-none">Back</button>
         </div>

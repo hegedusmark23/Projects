@@ -20,7 +20,6 @@ function generateCardHtml(imageSrc, i) {
 function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
     return /*html*/`
     <div  class="openedCard" >
-        
     <div class="info-container" id="info-container">
         <div class="image-headline">
             <img class="pokemonOpenedImage" src="${imageSrc}">
