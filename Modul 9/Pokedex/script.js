@@ -28,7 +28,7 @@ async function addPokemonToArray(allPokemon) {    //Adds the names of the Pokemo
 
 function loadMorePokemons() {
     let listOfPokemon = document.getElementById('pokedex-container');
-    loadedPokemons += 14;
+    loadedPokemons += 7;
     listOfPokemon.innerHTML = '';
     getApi();
     
