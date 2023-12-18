@@ -1,7 +1,7 @@
 let allPokemon = [];
 let pokemons = [];
 let currentPokemon;
-let loadedPokemons = 20;
+let loadedPokemons = 14;
 
 async function init() {
     await getApi();
@@ -13,6 +13,7 @@ async function getApi() {     //Fetches the API.
     let allPokemon = await response.json();
     await addPokemonToArray(allPokemon)
     await getPokemon(allPokemon);
+    scrollToBottom();
 }
 
 
@@ -27,14 +28,19 @@ async function addPokemonToArray(allPokemon) {    //Adds the names of the Pokemo
 
 function loadMorePokemons() {
     let listOfPokemon = document.getElementById('pokedex-container');
-    loadedPokemons += 20;
+    loadedPokemons += 14;
     listOfPokemon.innerHTML = '';
     getApi();
-    scrollToBottom();
+    
 }
 
 function scrollToBottom() {
-    document.getElementById('bottom').scrollIntoView();
+    const element = document.getElementById("bottom");
+
+    element.scrollIntoView();
+    element.scrollIntoView(false);
+    element.scrollIntoView({ block: "end" });
+    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }
 
 async function getPokemon(allPokemon) {                // Extracts the detaliled JSON of the Pokemons from the API.
