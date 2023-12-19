@@ -2,7 +2,7 @@
 
 function generateCardHtml(imageSrc, i) {
     return /*html*/`
-    <div onclick="openCard(event, ${i})" id="pokedex${i}" class="pokedex">
+    <div onclick="openCardOnClick(${i})" id="pokedex${i}" class="pokedex">
         <div class="card-headline">
             <div class="headline">
                 <h1 id="pokemonName${i}"></h1>
@@ -19,24 +19,26 @@ function generateCardHtml(imageSrc, i) {
 
 function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
     return /*html*/`
-    <div  class="openedCard" >
-    <div class="info-container" id="info-container">
-        <div class="image-headline">
-            <img class="pokemonOpenedImage" src="${imageSrc}">
-            <img class="close-element" onclick="closeOpenedCard()" src="./img/circle-x.png" alt="">
-        </div>
+    <img onclick="previousPokemon(${i})" class="swap-card-icon" src="./img/left-arrow.png" alt="">
+    <div class="openedCard">
+        <div class="info-container" id="info-container">
+            <div class="image-headline">
+                <img class="pokemonOpenedImage" src="${imageSrc}">
+                <img class="close-element swap-card-icon" onclick="closeOpenedCard()" src="./img/circle-x.png" alt="">
+            </div>
             <div class="card-opened-headline">
                 <h1 id="pokemonOpenedName${i}"></h1>
                 <p id="PokemonOpenedId${i}">#</p>
             </div>
             <p class="description">About</p>
-            <div class="line"></div> 
-            <div id="opened-card-content" class="opened-card-content"></div>  
+            <div class="line"></div>
+            <div id="opened-card-content" class="opened-card-content"></div>
             <p class="description">Stats</p>
             <div class="line"></div>
             <div id="opened-chart-content" class="opened-card-content"></div>
         </div>
     </div>
+    <img onclick="nextPokemon(${i})" class="swap-card-icon" src="./img/right-arrow.png" alt="">
     `;
 }
 

@@ -36,7 +36,6 @@ function loadMorePokemons() {
 
 function scrollToBottom() {
     const element = document.getElementById("bottom");
-
     element.scrollIntoView();
     element.scrollIntoView(false);
     element.scrollIntoView({ block: "end" });
@@ -50,7 +49,6 @@ async function getPokemon(allPokemon) {                // Extracts the detaliled
         currentPokemon = await response.json();
         renderPokemonCards(currentPokemon, i);
     }
-
 }
 
 function renderPokemonInfo(currentPokemon, i) {   // Adds the details to the cards in the unopened form.
@@ -153,16 +151,12 @@ function generateBackgroundColor(currentPokemon, i) {         // Sorts out the b
 }
 
 
-function openCard(event, i) {
-    let cardId = event.currentTarget.id;
-    let index = cardId.replace('pokedex', '');
-    index = parseInt(index, 10);
-    displayOpenedCard(index, i);
+function openCardOnClick(i) {
+    displayOpenedCard(i);
 }
 
-
-function displayOpenedCard(index, i) {
-    let clickedPokemon = pokemons[index];
+function displayOpenedCard(i) {
+    let clickedPokemon = pokemons[i];
     let url = `https://pokeapi.co/api/v2/pokemon/${clickedPokemon}`;
     fetch(url)
         .then(response => response.json())
@@ -175,9 +169,8 @@ function displayOpenedCard(index, i) {
             document.getElementById(`pokemonOpenedName${i}`).innerHTML = clickedPokemon[0].toUpperCase() + clickedPokemon.substring(1);
             document.getElementById(`PokemonOpenedId${i}`).innerHTML += data['id'];
             showAbout(data, i);
-            showStats(index)
-        })
-
+            showStats(i);
+        });
 }
 
 function closeOpenedCard() {
@@ -212,3 +205,12 @@ async function renderChartsForAllPokemons() {
     }
 }
 
+function previousPokemon(i) {
+    i--;
+    openCardOnClick(i);
+}
+
+function nextPokemon(i) {
+    i++;
+    openCardOnClick(i);
+}

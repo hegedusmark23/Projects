@@ -355,3 +355,13 @@ a{
   ::-webkit-scrollbar-thumb:hover {
     border: rgba(0, 0, 255, 0.616) solid 1px
   }
+
+  .swap-card-icon{
+    transition: transform .2s;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 9px white);
+  }
+
+  .swap-card-icon:hover{
+    transform: scale(1.1);
+  }
