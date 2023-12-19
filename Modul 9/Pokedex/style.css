@@ -103,7 +103,7 @@ input{
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    max-width: 1440px;
+    max-width: 1920px;
 
 }
 
@@ -364,4 +364,107 @@ a{
 
   .swap-card-icon:hover{
     transform: scale(1.1);
+  }
+
+  @media (max-width: 431px){
+    .pokedex{
+        width: 140px;
+    }
+
+    .pokemonImage{
+        height: 100px;
+    }
+
+    h1{
+        font-size: 18px;
+    }
+    
+    .opened-name{
+        font-size: 30px
+    }
+
+    .pokemon-type{
+        font-size: 10px;
+    }
+
+    .openedCard{
+        width: 280px;
+    }
+
+    .info-container{
+        height: 540px;
+    }
+
+    .line{
+        width: 230px;
+    }
+
+ 
+
+    .swap-card-icon{
+        height: 45px;
+    }
+    
+    .close-element{
+        height: 30px;
+    }
+
+    .pokemonOpenedImage {
+        height: 105px;
+    }
+  }
+
+
+  @media (max-width: 380px){
+    .pokedex{
+        width: 100px;
+        border-radius: 14px;
+    }
+
+    .pokemonImage{
+        height: 70px;
+    }
+
+    h1{
+        font-size: 12px;
+    }
+    
+    p{
+        font-size: 12px;
+    }
+    
+    .opened-name{
+        font-size: 30px
+    }
+
+    .pokemon-type{
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .openedCard{
+        width: 250px;
+    }
+
+    .info-container{
+        height: 510px;
+    }
+
+    .line{
+        width: 200px;
+    }
+
+ 
+
+    .swap-card-icon{
+        height: 25px;
+    }
+    
+    .close-element{
+        height: 25px;
+    }
+
+    .pokemonOpenedImage {
+        height: 105px;
+    }
   }

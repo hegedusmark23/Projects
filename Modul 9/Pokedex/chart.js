@@ -25,13 +25,51 @@ function renderChart(i) {
         borderWidth: 1
       }]
     },
-    options: {
-      indexAxis: 'y',
-      scales: {
-        y: {
-          beginAtZero: true
+   options: {
+     legend: false,
+    tooltip: false,
+    indexAxis: 'y',
+    layout: {
+       padding: 0
+    },
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        backgroundColor: null,
+        borderColor: null,
+        borderRadius: 4,
+        borderWidth: 1,
+        color: '#223388',
+        font: function(context) {
+          var width = context.chart.width;
+          var size = Math.round(width / 1);
+           return {
+             size: size,
+            weight: 100
+          };
+        },
+        offset: 4,
+        padding: 0,
+        formatter: function(value) {
+           return Math.round(value * 10) / 10
         }
       }
     }
-  });
-}
+  }
+});
+    }
+
+function responsiveFonts(){
+  if (window.outerWidth < 430) {
+    Chart.defaults.font.size = 5;
+    Chart.canvas.parentNode.style.height = '128px';
+    Chart.canvas.parentNode.style.width = '128px';
+  }
+  if (window.outerWidth > 430) {
+      Chart.defaults.font.size = 1;
+      Chart.canvas.parentNode.style.height = '170px';
+      Chart.canvas.parentNode.style.width = '340px';
+    }
+    console.log(window.outerWidth);
+};

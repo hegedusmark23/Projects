@@ -27,7 +27,7 @@ function generateOpenedCardHtml(imageSrc, currentPokemon, i) {
                 <img class="close-element swap-card-icon" onclick="closeOpenedCard()" src="./img/circle-x.png" alt="">
             </div>
             <div class="card-opened-headline">
-                <h1 id="pokemonOpenedName${i}"></h1>
+                <h1 class="opened-name" id="pokemonOpenedName${i}"></h1>
                 <p id="PokemonOpenedId${i}">#</p>
             </div>
             <p class="description">About</p>

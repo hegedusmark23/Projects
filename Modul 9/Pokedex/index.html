@@ -11,17 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-</head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.2.0"></script>
+    </head >
 
-<body onload="init()">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <body onload="init()">
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="chart.js"></script>
-     <script src="script.js"></script>
+    <script src="script.js"></script>
+
     <header>
         <img class="header-logo" src="./img/pokemon-logo.png" alt="">
         <div class="search">
-            <input onkeydown="searchPokemon(event)" type="text" required name="search" id="input" placeholder="Search ...">
-            <button onclick="searchPokemon()" class="search-button">Search</button>
+            <input onkeydown="searchPokemon(event)" type="text" required name="search" id="input"
+                placeholder="Search ...">
+            <button onclick="searchPokemon(event)" class="search-button">Search</button>
             <button onclick="goBack()" id="back-btn" class="back-btn d-none">Back</button>
         </div>
     </header>
@@ -31,10 +35,7 @@
         <a id="load-more-button" class="load-more-button" onclick="loadMorePokemons()">Load more</a>
         <div id="bottom"></div>
     </main>
-
     <script src="templates.js"></script>
-   
-
-</body>
+    </body>
 
 </html>

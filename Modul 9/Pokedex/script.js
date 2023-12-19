@@ -68,9 +68,9 @@ function renderPokemonCards(currentPokemon, i) {        // Renders the Cards.
 
 function searchPokemon(event) {
     let search = document.getElementById('input').value;
-    document.getElementById('load-more-button');
     search = search.toLowerCase();
-    if (event.key === "Enter" && search.trim() !== '') {
+
+    if ((event.key === "Enter" || event.type === "click") && search.trim() !== '') {
         for (let i = 0; i < pokemons.length; i++) {
             const pokemon = pokemons[i];
             if (pokemon.includes(search)) {
@@ -79,7 +79,6 @@ function searchPokemon(event) {
         }
     }
     document.getElementById('load-more-button').classList.add("d-none");
-
 }
 
 async function searchPokemonData(pokemon, i) {
@@ -214,3 +213,4 @@ function nextPokemon(i) {
     i++;
     openCardOnClick(i);
 }
+
