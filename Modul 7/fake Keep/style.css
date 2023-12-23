@@ -73,6 +73,9 @@ a{
     color: black;
     font-weight: bold;
     font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightgray;
 }
 
 .line{
@@ -83,4 +86,12 @@ a{
 
 .d-none{
     display: none;
+}
+
+.nav-link{
+    margin-top: 80px;
+}
+
+a:hover{
+    background-color: rgb(165, 165, 165);
 }

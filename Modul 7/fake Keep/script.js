@@ -54,9 +54,7 @@ function deleteNotice(i) {
 function putToTrash(i){
     let title = titles[i]
     let notice = notices[i]
-
-    
-    deletedTitles.push(title)
+     deletedTitles.push(title)
     deletedNotices.push(notice)
 }
 
