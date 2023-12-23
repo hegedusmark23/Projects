@@ -1,5 +1,7 @@
 let titles = [];
 let notices = [];
+let deletedTitles = [];
+let deletedNotices = [];
 load();
 
 function render() {
@@ -9,11 +11,11 @@ function render() {
     content.innerHTML = '';
 
     input.innerHTML += /*html*/`
-        <div class="input-section">
-            <input id="title" type="text" placeholder="Title ...">
-            <input id="notice" type="text" placeholder="Notice ...">
-            <button onclick="addNotice()">Add notice</button>
-        </div>
+        <form onsubmit="addNotice();return false;" class="input-section">
+            <input required minlength="2" id="title" type="text" placeholder="Title ...">
+            <input required minlength="2" id="notice" type="text" placeholder="Notice ...">
+            <button>Add notice</button>
+        </form>
     `;
 
     for (let i = 0; i < titles.length; i++) {
@@ -44,9 +46,18 @@ function addNotice() {
 function deleteNotice(i) {
     titles.splice(i, 1);
     notices.splice(i, 1);
-
+    putToTrash(i);
     render();
     save();
+}
+
+function putToTrash(i){
+    let title = titles[i]
+    let notice = notices[i]
+
+    
+    deletedTitles.push(title)
+    deletedNotices.push(notice)
 }
 
 function save() {

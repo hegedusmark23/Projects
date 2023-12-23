@@ -1,7 +1,7 @@
 let allPokemon = [];
 let pokemons = [];
 let currentPokemon;
-let loadedPokemons = 14;
+let loadedPokemons = 12;
 
 async function init() {
     await getApi();

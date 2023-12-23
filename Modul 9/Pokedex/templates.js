@@ -64,7 +64,7 @@ function generateAboutHtml(i) {
 
 function generatechartHtml(i) {
     return `
-    <div>
+    <div class="chart-div">
         <canvas width="340" id="statsChart${i}"></canvas>
       </div>
     `;

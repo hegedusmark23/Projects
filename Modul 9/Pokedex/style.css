@@ -104,7 +104,7 @@ input{
     flex-wrap: wrap;
     gap: 12px;
     max-width: 1920px;
-
+    justify-content: center
 }
 
 .card-headline {
@@ -366,6 +366,10 @@ a{
     transform: scale(1.1);
   }
 
+  .chart-div{
+    width: 95%;
+  }
+
   @media (max-width: 431px){
     .pokedex{
         width: 140px;
@@ -447,7 +451,7 @@ a{
     }
 
     .info-container{
-        height: 510px;
+        height: 530px;
     }
 
     .line{

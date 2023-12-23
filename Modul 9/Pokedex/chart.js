@@ -60,16 +60,3 @@ function renderChart(i) {
 });
     }
 
-function responsiveFonts(){
-  if (window.outerWidth < 430) {
-    Chart.defaults.font.size = 5;
-    Chart.canvas.parentNode.style.height = '128px';
-    Chart.canvas.parentNode.style.width = '128px';
-  }
-  if (window.outerWidth > 430) {
-      Chart.defaults.font.size = 1;
-      Chart.canvas.parentNode.style.height = '170px';
-      Chart.canvas.parentNode.style.width = '340px';
-    }
-    console.log(window.outerWidth);
-};
