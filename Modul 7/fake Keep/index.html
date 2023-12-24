@@ -14,16 +14,17 @@
         rel="stylesheet">
 </head>
 
-<body onload="render()">
+<body onload="init()">
     <nav>
-        <a class="nav-link" href="">Notices</a>
+        <h3>Notes</h3>
+        <a onclick="showNotices()" class="nav-link"><img class="nav-logo" src="./img/notice.png" alt="">Notices</a>
         <div class="line"></div>
-        <a href="">Trash</a>
+        <a onclick="showTrash()"><img class="nav-logo" src="./img/trash.png" alt="">Trash</a>
     </nav>
     <main>
         <div class="input-div" id="input"></div>
         <div class="content-div" id="content"></div>
-        <div class="trash" id="trash"></div>
+        <div class="trash d-none" id="trash"></div>
     </main>
 </body>
 

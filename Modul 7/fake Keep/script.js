@@ -6,6 +6,7 @@ load();
 
 function init(){
     render();
+    renderTrash();
 }
 
 function render() {
@@ -97,6 +98,14 @@ function load() {
 }
 
 function showNotices(){
-    document.getElementById('content')
+    document.getElementById('content').classList.remove('d-none');
+    document.getElementById('trash').classList.add('d-none');
+}
+
+function showTrash(){
+    document.getElementById('content').classList.add('d-none');
+    document.getElementById('trash').classList.remove('d-none');
+    document.getElementById('trash').classList.add('d-flex');    
+      
 }
 

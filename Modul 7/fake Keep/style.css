@@ -55,6 +55,7 @@ nav{
     gap: 10px;
     align-items: center;
     min-width: 180px;
+    background-color: #c4c2c2;
 }
 
 main{
@@ -76,6 +77,9 @@ a{
     padding: 5px;
     border-radius: 5px;
     background-color: lightgray;
+    cursor: pointer;
+    width: 140px;
+    text-align: center;
 }
 
 .line{
@@ -94,4 +98,12 @@ a{
 
 a:hover{
     background-color: rgb(165, 165, 165);
+}
+
+.d-flex{
+    display: flex;
+}
+
+.nav-logo{
+    height: 18px;
 }
