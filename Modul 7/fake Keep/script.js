@@ -4,6 +4,10 @@ let deletedTitles = [];
 let deletedNotices = [];
 load();
 
+function init(){
+    render();
+}
+
 function render() {
     let input = document.getElementById('input');
     let content = document.getElementById('content');
@@ -23,10 +27,27 @@ function render() {
         const notice = notices[i];
 
         content.innerHTML += /*html*/ `
-        <div class="notice-block">
-            <h1>${titles[i]}</h1>
-            <p>${notices[i]}</p>
-            <button  class="delete-button" onclick="deleteNotice()">Delete</button>
+        <div id="notice-block${i}" class="notice-block">
+            <h1 id="title${i}">${title}</h1>
+            <p id="notice${i}">${notice}</p>
+            <button  class="delete-button" onclick="deleteNotice(${i})">Delete</button>
+        </div>
+    `;
+    }
+}
+
+function renderTrash(){
+    let content = document.getElementById('trash');
+    content.innerHTML = '';
+    for (let i = 0; i < deletedTitles.length; i++) {
+        const title = deletedTitles[i];
+        const notice = deletedNotices[i];
+
+        content.innerHTML += /*html*/ `
+        <div id="notice-block${i}" class="notice-block">
+            <h1 id="title${i}">${title}</h1>
+            <p id="notice${i}">${notice}</p>
+            <button  class="delete-button" onclick="deleteNotice(${i})">Delete</button>
         </div>
     `;
     }
@@ -44,18 +65,19 @@ function addNotice() {
 }
 
 function deleteNotice(i) {
+    putToTrash(i);
     titles.splice(i, 1);
     notices.splice(i, 1);
-    putToTrash(i);
+    
     render();
     save();
 }
 
 function putToTrash(i){
-    let title = titles[i]
-    let notice = notices[i]
-     deletedTitles.push(title)
-    deletedNotices.push(notice)
+    let title = document.getElementById(`title${i}`).innerHTML;
+    let notice = document.getElementById(`notice${i}`).innerHTML;
+    deletedTitles.push(title);
+    deletedNotices.push(notice);
 }
 
 function save() {
@@ -73,3 +95,8 @@ function load() {
         notices = JSON.parse(noticesAsText);
     }
 }
+
+function showNotices(){
+    document.getElementById('content')
+}
+
