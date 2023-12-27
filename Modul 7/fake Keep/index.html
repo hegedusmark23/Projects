@@ -12,20 +12,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap"
         rel="stylesheet">
+        
 </head>
 
 <body onload="init()">
     <nav>
         <h3>Notes</h3>
-        <a onclick="showNotices()" class="nav-link"><img class="nav-logo" src="./img/notice.png" alt="">Notices</a>
+        <a onclick="showNotices()" class="nav-link"><img class="nav-logo" src="./img/notice.png" alt="">Notices <p class="counter" id="noticeCount"></p></a>
         <div class="line"></div>
-        <a onclick="showTrash()"><img class="nav-logo" src="./img/trash.png" alt="">Trash</a>
+        <a onclick="showTrash()"><img class="nav-logo" src="./img/trash.png" alt="">Trash<p class="counter" id="tashCount"></p></a>
     </nav>
     <main>
         <div class="input-div" id="input"></div>
         <div class="content-div" id="content"></div>
         <div class="trash d-none" id="trash"></div>
     </main>
+    <script src="templates.js"></script>
 </body>
 
 </html>

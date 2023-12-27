@@ -14,26 +14,11 @@ function render() {
     let content = document.getElementById('content');
     input.innerHTML = '';
     content.innerHTML = '';
-
-    input.innerHTML += /*html*/`
-        <form onsubmit="addNotice();return false;" class="input-section">
-            <input required minlength="2" id="title" type="text" placeholder="Title ...">
-            <input required minlength="2" id="notice" type="text" placeholder="Notice ...">
-            <button>Add notice</button>
-        </form>
-    `;
-
+    input.innerHTML += inputHTML();
     for (let i = 0; i < titles.length; i++) {
         const title = titles[i];
         const notice = notices[i];
-
-        content.innerHTML += /*html*/ `
-        <div id="notice-block${i}" class="notice-block">
-            <h1 id="title${i}">${title}</h1>
-            <p id="notice${i}">${notice}</p>
-            <button  class="delete-button" onclick="deleteNotice(${i})">Delete</button>
-        </div>
-    `;
+        content.innerHTML += noticeHTML(i, title, notice);
     }
 }
 
@@ -43,14 +28,7 @@ function renderTrash(){
     for (let i = 0; i < deletedTitles.length; i++) {
         const title = deletedTitles[i];
         const notice = deletedNotices[i];
-
-        content.innerHTML += /*html*/ `
-        <div id="notice-block${i}" class="notice-block">
-            <h1 id="title${i}">${title}</h1>
-            <p id="notice${i}">${notice}</p>
-            <button  class="delete-button" onclick="deleteNotice(${i})">Delete</button>
-        </div>
-    `;
+        content.innerHTML += deletedNoticeHTML(i,title,notice);
     }
 }
 
@@ -84,28 +62,40 @@ function putToTrash(i){
 function save() {
     let titlesAsText = JSON.stringify(titles)
     let noticesAsText = JSON.stringify(notices)
+    let dtitlesAsText = JSON.stringify(deletedTitles)
+    let dnoticesAsText = JSON.stringify(deletedNotices)
     localStorage.setItem('titles', titlesAsText);
     localStorage.setItem('notices', noticesAsText);
+    localStorage.setItem('deletedTitles', dtitlesAsText);
+    localStorage.setItem('deletedNotices', dnoticesAsText);
 }
 
 function load() {
     let titlesAsText = localStorage.getItem('titles');
     let noticesAsText = localStorage.getItem('notices')
+    let dtitlesAsText = localStorage.getItem('deletedTitles')
+    let dnoticesAsText = localStorage.getItem('deletedNotices')
     if (titlesAsText && noticesAsText) {
         titles = JSON.parse(titlesAsText);
         notices = JSON.parse(noticesAsText);
+    }
+    if (dtitlesAsText && dnoticesAsText) {
+        deletedTitles = JSON.parse(dtitlesAsText);
+        deletedNotices = JSON.parse(dnoticesAsText);
     }
 }
 
 function showNotices(){
     document.getElementById('content').classList.remove('d-none');
+    document.getElementById('trash').classList.remove('d-flex');
     document.getElementById('trash').classList.add('d-none');
 }
 
 function showTrash(){
     document.getElementById('content').classList.add('d-none');
     document.getElementById('trash').classList.remove('d-none');
-    document.getElementById('trash').classList.add('d-flex');    
+    document.getElementById('trash').classList.add('d-flex');
+    renderTrash();    
       
 }
 
