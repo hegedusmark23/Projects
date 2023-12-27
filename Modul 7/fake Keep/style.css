@@ -110,4 +110,14 @@ a:hover{
 
 .counter{
     margin: 0px;
+    font-size: 9px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    display: contents;
+}
+
+.trash{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }

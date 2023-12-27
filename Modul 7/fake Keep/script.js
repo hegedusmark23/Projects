@@ -20,6 +20,9 @@ function render() {
         const notice = notices[i];
         content.innerHTML += noticeHTML(i, title, notice);
     }
+    if (titles.length >= 1) {
+        document.getElementById('noticeCount').innerHTML = titles.length;
+    }
 }
 
 function renderTrash(){
@@ -29,6 +32,9 @@ function renderTrash(){
         const title = deletedTitles[i];
         const notice = deletedNotices[i];
         content.innerHTML += deletedNoticeHTML(i,title,notice);
+    }
+    if (deletedTitles.length >= 0) {
+        document.getElementById('trashCount').innerHTML = deletedTitles.length;
     }
 }
 
@@ -40,6 +46,7 @@ function addNotice() {
     notices.push(notice.value);
 
     render();
+    renderTrash();
     save();
 }
 
@@ -49,6 +56,7 @@ function deleteNotice(i) {
     notices.splice(i, 1);
     
     render();
+    renderTrash();
     save();
 }
 
@@ -78,8 +86,7 @@ function load() {
     if (titlesAsText && noticesAsText) {
         titles = JSON.parse(titlesAsText);
         notices = JSON.parse(noticesAsText);
-    }
-    if (dtitlesAsText && dnoticesAsText) {
+    } if (dtitlesAsText && dnoticesAsText) {
         deletedTitles = JSON.parse(dtitlesAsText);
         deletedNotices = JSON.parse(dnoticesAsText);
     }
