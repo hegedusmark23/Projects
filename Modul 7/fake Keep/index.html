@@ -20,7 +20,8 @@
         <h3>Notice-App</h3>
         <a onclick="showNotices()" class="nav-link"><img class="nav-logo" src="./img/notice.png" alt="">Notices <span class="counter" id="noticeCount"></span></a>
         <div class="line"></div>
-        <a onclick="showTrash()"><img class="nav-logo" src="./img/trash.png" alt="">Trash<span class="counter" id="trashCount"></span></a>
+        <a id="showTrash" onclick="showTrash(),showEmptyTrashButton()"><img class="nav-logo" src="./img/trash.png" alt="">Trash <span class="counter" id="trashCount"></span></a>
+        <a onclick="emptyTrash()" id="emptyTrash" class="d-none">Empty Trash</a>
     </nav>
     <main>
         <div class="input-div" id="input"></div>

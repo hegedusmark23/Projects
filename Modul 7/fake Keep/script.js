@@ -4,7 +4,7 @@ let deletedTitles = [];
 let deletedNotices = [];
 load();
 
-function init(){
+function init() {
     render();
     renderTrash();
 }
@@ -19,22 +19,24 @@ function render() {
         const title = titles[i];
         const notice = notices[i];
         content.innerHTML += noticeHTML(i, title, notice);
-    }
-    if (titles.length >= 1) {
+    } if (titles.length >= 1) {
         document.getElementById('noticeCount').innerHTML = titles.length;
+    } else {
+        document.getElementById('noticeCount').innerHTML = '';
     }
 }
 
-function renderTrash(){
+function renderTrash() {
     let content = document.getElementById('trash');
     content.innerHTML = '';
     for (let i = 0; i < deletedTitles.length; i++) {
         const title = deletedTitles[i];
         const notice = deletedNotices[i];
-        content.innerHTML += deletedNoticeHTML(i,title,notice);
-    }
-    if (deletedTitles.length >= 0) {
+        content.innerHTML += deletedNoticeHTML(i, title, notice);
+    } if (deletedTitles.length >= 1) {
         document.getElementById('trashCount').innerHTML = deletedTitles.length;
+    } else {
+        document.getElementById('trashCount').innerHTML = '';
     }
 }
 
@@ -54,13 +56,13 @@ function deleteNotice(i) {
     putToTrash(i);
     titles.splice(i, 1);
     notices.splice(i, 1);
-    
+
     render();
     renderTrash();
     save();
 }
 
-function putToTrash(i){
+function putToTrash(i) {
     let title = document.getElementById(`title${i}`).innerHTML;
     let notice = document.getElementById(`notice${i}`).innerHTML;
     deletedTitles.push(title);
@@ -92,17 +94,33 @@ function load() {
     }
 }
 
-function showNotices(){
+function showNotices() {
     document.getElementById('content').classList.remove('d-none');
     document.getElementById('trash').classList.remove('d-flex');
     document.getElementById('trash').classList.add('d-none');
 }
 
-function showTrash(){
+function showTrash() {
     document.getElementById('content').classList.add('d-none');
     document.getElementById('trash').classList.remove('d-none');
     document.getElementById('trash').classList.add('d-flex');
-    renderTrash();    
-      
+    renderTrash();
+
+}
+
+function showEmptyTrashButton() {
+    if (deletedTitles.length >= 1) {
+        document.getElementById('emptyTrash').classList.remove('d-none')
+    }
+}
+
+function emptyTrash(){
+   deletedTitles = [];
+   deletedNotices = [];
+   document.getElementById('emptyTrash').classList.add('d-none')
+    save();
+    render();
+    renderTrash();
+    showNotices();
 }
 
