@@ -11,12 +11,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 5px;
+    padding: 0 10px;
 }
 
 .img-size{
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+    transition: transform .2s;
+    cursor: pointer;
 }
 
 .img-container{
@@ -25,36 +30,20 @@ body {
     border-radius: 10px;
 }
 
-img:hover {
-	opacity: 1;
-	-webkit-animation: flash 1.5s;
-	animation: flash 1.5s;
-}
-@-webkit-keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
+
+.img-size:hover {
+	transform: scale(1.01);
 }
 
+
 .opened-div{
-    background-color: black;
-    opacity: 95%;
-    height: 100vh;
+    background-color: rgb(0 0 0 / 91%);
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
 
@@ -65,14 +54,45 @@ img:hover {
     border-radius: 10px;
 }
 
-a{
+.nav-back{
+    height: 30px;
     top: 35px;
     position: absolute;
-    left: 35px;
-    text-decoration: none;
-    color: black;
+    right: 35px;
     padding: 2px 5px;
-    background: white;
-    border-radius: 4px;
-    font-weight: bold;
+    filter: drop-shadow(0px 0px 9px white);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.nav-back:hover{
+    transform: scale(1.02);
+}
+
+.opened-img{
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100vh;
+}
+
+.image-slider{
+    align-items: center;
+    display: flex;
+}
+
+.nav-arrow{
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 9px white);
+    transition: transform .2s;
+}
+
+.nav-arrow:hover{
+    transform: scale(1.02);
+}
+
+.d-none{
+    display: none;
 }
