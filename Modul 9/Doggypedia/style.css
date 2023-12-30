@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Roboto-regular";
+    font-weight: 400;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-bold";
+    font-weight: 700;
+    src: url(./fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-thin";
+    font-weight: 100;
+    src: url(./fonts/Roboto-Thin.ttf);
+}
+
+body {
+    margin: 0px;
+    font-family: Roboto-regular;
+    font-weight: 100;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
