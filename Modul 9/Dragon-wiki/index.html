@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon-wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+
+    <main>
+        <header>
+            <img src="./assets/img/header.png" alt="">
+        </header>
+
+        <div class="main-content">
+            <aside>
+                <nav>
+                    <div class="navbar"><a href="">Characters</a></div>
+                    <div class="navbar"><a href="">About</a></div>
+                    <form id="form" onsubmit="search();return false">
+                        <p>Search</p>
+                        <input type="text" id="search">
+                   </form>
+                </nav>
+            </aside>
+            <div class="cards">
+                <div class="card-container" id="content"></div>
+            </div>
+        </div>
+    </main>
+    <script src="templates.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
