@@ -10,7 +10,7 @@ async function init() {
 
 async function getApi() {
     await fetchCharacters();
-    await fetchTransformations()
+    await fetchTransformations();
 }
 
 
@@ -39,24 +39,26 @@ function generateCharacters() {
 function search() {
     let input = document.getElementById('search').value;
     let content = document.getElementById('content');
+    let button = document.getElementById('btn');
     input = input.toLowerCase();
     content.innerHTML = '';
+    for (let i = 0; i < characters[0]['items'].length; i++) {
+        let character = characters[0]['items'][i]['name'];
+        if (character.toLowerCase().includes(input)) {
+            content.innerHTML += generateCharacterHTML(i);
+            button.classList.remove('d-none');
+        }
+    }
+}
 
-     for (let i = 0; i < characters[0]['items'].length; i++) {
-         let character = characters[0]['items'][i]['name'];
-         if (character.toLowerCase().includes(input)) {
-             content.innerHTML += generateCharacterHTML(i);
-         }
-     }
-   }
+function cancelSearch() {
+    let button = document.getElementById('btn');
+    document.getElementById('content').innerHTML = '';
+    generateCharacters();
+    button.classList.add('d-none');
+    document.getElementById('search').value = '';
+}
 
-   function submit(){
-    const myForm = document.getElementById('form')
+function openCard(){
 
-    myForm.addEventListener('submit', (event) => {
-      // this will prevent page from refreshing
-      event.preventDefault() 
-    
-      // your other code
-    })
 }

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon-wiki</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body onload="init()">
@@ -20,15 +26,19 @@
                 <nav>
                     <div class="navbar"><a href="">Characters</a></div>
                     <div class="navbar"><a href="">About</a></div>
-                    <form id="form" onsubmit="search();return false">
+                    <div class="form" onkeydown="search()">
                         <p>Search</p>
-                        <input type="text" id="search">
-                   </form>
+                        <div class="search-bar">
+                            <input type="text" id="search">
+                            <button id="btn" onclick="cancelSearch()" class="d-none">back</button>
+                        </div>
+                    </div>
                 </nav>
             </aside>
             <div class="cards">
                 <div class="card-container" id="content"></div>
             </div>
+            <div class="opened-card-container d-none"></div>
         </div>
     </main>
     <script src="templates.js"></script>
