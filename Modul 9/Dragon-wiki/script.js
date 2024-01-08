@@ -59,6 +59,30 @@ function cancelSearch() {
     document.getElementById('search').value = '';
 }
 
-function openCard(){
+function openCard(i){
+    let container = document.getElementById('opened-card-container');
+    container.innerHTML = generateOpenedCharacterHTML(i);
+    document.getElementById('opened-card-container').classList.remove('d-none');
+    document.getElementById('opened-card-container').classList.add('d-flex');
+}
 
+function closeCard(){
+    document.getElementById('opened-card-container').classList.remove('d-flex');
+    document.getElementById('opened-card-container').classList.add('d-none');
+}
+
+function showStats(i){
+    let cardContent = document.getElementById('opened-card-content');
+    cardContent.innerHTML = generateCharStatsHTML(i); 
+}
+
+function showTransformations(i){
+    let cardContent = document.getElementById('opened-card-content');
+    let charName = characters[0]['items'][i]['name'];
+    let transformName = transformations[0][i]['name'];
+    if (charName == transformName.split(' ')[0]) {
+        cardContent.innerHTML = generateTransformationsHTML(i);
+    } else {
+        cardContent.innerHTML = `<h1>No transformation.</h1>`
+    }
 }

@@ -128,6 +128,10 @@ button:hover{
     display: none;
 }
 
+.d-flex{
+    display: flex;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;
@@ -142,4 +146,95 @@ a {
 
 .navbar:hover {
     background-color: #ffffff3d;
+}
+
+.opened-card-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.openedCard{
+    width: 600px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opened-image{
+    height: 500px;
+    margin-top: -220px;
+    filter: drop-shadow(6px 6px 8px black);
+}
+
+.opened-headline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.line{
+    background-color: black;
+    width: 540px;
+    height: 2px;
+    border-radius: 0.5px;
+    margin-top: 10px;
+}
+
+.opened-navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 45px;
+    align-items: center;
+}
+
+.closer-button{
+    height: 30px;
+    cursor: pointer;
+    transition: transform .2s;
+    padding: 10px;
+}
+
+.closer-button:hover{
+    transform: scale(1.02);
+}
+
+.opened-nav{
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.opened-nav:hover{
+    transform: scale(1.03);
+}
+
+.closer-div{
+    height: 272px;
+}
+
+.opened-card-content{
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tr > * + * {
+    padding-left: 70px;
+  }
+
+.trans-image{
+    height: 200px;
+    object-fit: cover;
 }
